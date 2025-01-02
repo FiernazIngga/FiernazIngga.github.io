@@ -1,7 +1,10 @@
 // tailwind.config.js
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["*/.{html,js}"],
+  content: [
+    "./index.html",          // Pastikan file HTML Anda tercakup
+    "./css/**/*.css",        // Menambahkan file CSS yang menggunakan Tailwind
+  ],
   theme: {
     extend: {
       colors: {
