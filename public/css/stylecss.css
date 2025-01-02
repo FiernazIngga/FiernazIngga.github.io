@@ -5,6 +5,13 @@
     background-color: rgba(255, 255, 255, 0.7); /* transparan dengan sedikit warna putih */
 }
 
+* {
+    box-sizing: border-box;  /* Menghindari elemen melampaui lebar layar */
+}
+
+html, body {
+    overflow-x: hidden;
+}
 
 header div .nav {
     color: #2d3748; /* warna font lebih gelap dan netral untuk navbar */
