@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth" x-data="{mode: false}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,39 +9,97 @@
 	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
-<body class="bg-[url('bgblur.jpg')] bg-cover bg-center">
+<body class="bg-cover bg-center transition-all duration-500" :style="{'background-image': mode ? 'url(\'bgblur.jpg\')' : 'url(\'bgblurdark.jpg\')'}">
 
 	<div class="p-5 absolute top-0 z-50" id="home">	</div>
 
 	<div class="p-5 sticky top-0 z-50">
-		<header class="navbar rounded-xl top-0 left-0 w-full flex items-center bg-white bg-opacity-50 z-50">	
+		<header class="navbar rounded-xl top-0 left-0 w-full flex items-center bg-opacity-90 z-50 duration-500 transition-all" :class="!mode?'bg-black':' bg-white'">	
 			<div class="container mx-auto">
 				<div class="flex items-center justify-between relative" x-data="{rotate: true}">
 					<div class="px-4">
-						<a href="#home" class="font-bold text-lg block py-6 ml-3 text-gray-800">fiernazingga</a>
+						<a href="#home" class="font-bold text-lg block py-6 ml-3 duration-500 transition-all" :class="!mode?'text-[#7f5af0]':'text-green-800'">fiernazingga</a>
 					</div>
 					<div @click.outside="rotate = true" class="flex items-center px-4">
 						<button @click="rotate = !rotate" id="hamburger" name="hamburger" class="block lg:hidden absolute right-4">
-							<span :class="rotate ? 'rotate-0' : 'rotate-45'" class="w-[30px] h-[2px] my-2 block bg-green-600 origin-top-left transition duration-500"></span>
-							<span :class="rotate ? 'opacity-100' : 'opacity-0'" class="w-[30px] h-[2px] my-2 block bg-green-600 transition duration-500"></span>
-							<span :class="rotate ? 'rotate-0' : '-rotate-45'" class="w-[30px] h-[2px] my-2 block bg-green-600 origin-top-left transition duration-500"></span>
+							<span
+							:class="{
+								'rotate-0' : rotate,
+								'rotate-45' : !rotate,
+								'bg-[#7f5af0]' : !mode,
+								'bg-green-600' : mode
+							}" 
+							class="w-[30px] h-[2px] my-2 block  origin-top-left transition duration-500"></span>
+							<span :class="{
+								'opacity-0' : !rotate,
+								'opacity-100' : rotate,
+								'bg-[#7f5af0]' : !mode,
+								'bg-green-600' : mode
+							}" class="w-[30px] h-[2px] my-2 block bg-green-600 transition duration-500"></span>
+							<span :class="{
+								'rotate-0' : rotate,
+								'-rotate-45' : !rotate,
+								'bg-[#7f5af0]' : !mode,
+								'bg-green-600' : mode
+							}" class="w-[30px] h-[2px] my-2 block bg-green-600 origin-top-left transition duration-500"></span>
 						</button>
-						<nav id="navMenu" class="lg:block lg:static lg:bg-transparent lg:max-w-full" :class="rotate ? 'hidden' : 'nav block absolute py-5 bg-white bg-opacity-90 shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full'">
+						<nav id="navMenu" class="lg:block lg:static lg:bg-transparent lg:max-w-full"
+						:class="{
+							'hidden': rotate,
+							'nav block absolute py-5 transition-all duration-500 bg-opacity-90 shadow-lg rounded-lg max-w-[250px] w-full mt-1 right-4 top-full': !rotate,
+							'bg-black': !mode,
+							'bg-white': mode
+						}">
 							<ul class="block lg:flex lg:ml-auto">
 								<li class="group">
-									<a href="#home" class="text-base py-2 mx-8 flex group-hover:text-green-600 transition duration-200 lg:duration-500">Home</a>
+									<a href="#home" class="relative text-base py-2 mx-8 flex group-hover:text-green-600 transition duration-200 lg:duration-300" :class="mode?'text-black':'text-white'">Home</a>
+									<div class="hidden lg:block">
+										<div class="w-[6.5em] flex h-1 -mt-[0.7em] absolute items-center justify-center">
+											<div class="w-0 group-hover:w-[4em] transition-all duration-300 h-1 bg-green-600 rounded-full"></div>
+										</div>
+									</div>
 								</li>
 								<li class="group">
-									<a href="#about" class="text-base py-2 mx-8 flex group-hover:text-green-600 transition duration-200">About Me</a>
+									<a href="#about" class="text-base py-2 mx-8 flex group-hover:text-green-600 transition duration-200 lg:duration-300" :class="mode?'text-black':'text-white'">About Me</a>
+									<div class="hidden lg:block">
+										<div class="w-[8em] flex h-1 -mt-[0.7em] absolute items-center justify-center">
+											<div class="w-0 group-hover:w-[6em] transition-all duration-300 h-1 bg-green-600 rounded-full"></div>
+										</div>
+									</div>
 								</li>
 								<li class="group">
-									<a href="#skill" class="text-base py-2 mx-8 flex group-hover:text-green-600 transition duration-200">Skill</a>
+									<a href="#skill" class="text-base py-2 mx-8 flex group-hover:text-green-600 transition duration-200 lg:duration-300" :class="mode?'text-black':'text-white'">Skill</a>
+									<div class="hidden lg:block">
+										<div class="w-[6em] flex h-1 -mt-[0.7em] absolute items-center justify-center">
+											<div class="w-0 group-hover:w-[3em] transition-all duration-300 h-1 bg-green-600 rounded-full"></div>
+										</div>
+									</div>
 								</li>
 								<li class="group">
-									<a href="#certificate" class="text-base py-2 mx-8 flex group-hover:text-green-600 transition duration-200">Certificate</a>
+									<a href="#certificate" class="text-base py-2 mx-8 flex group-hover:text-green-600 transition duration-200 lg:duration-300" :class="mode?'text-black':'text-white'">Certificate</a>
+									<div class="hidden lg:block">
+										<div class="w-[8.5em] flex h-1 -mt-[0.7em] absolute items-center justify-center">
+											<div class="w-0 group-hover:w-[6em] transition-all duration-300 h-1 bg-green-600 rounded-full"></div>
+										</div>
+									</div>
 								</li>
 								<li class="group">
-									<a href="#contact" class="text-base py-2 mx-8 flex group-hover:text-green-600 transition duration-200">Contact</a>
+									<a href="#contact" class="text-base py-2 mx-8 flex group-hover:text-green-600 transition duration-200 lg:duration-300" :class="mode?'text-black':'text-white'">Contact</a>
+									<div class="hidden lg:block">
+										<div class="w-[8em] flex h-1 -mt-[0.7em] absolute items-center justify-center">
+											<div class="w-0 group-hover:w-[5em] transition-all duration-300 h-1 bg-green-600 rounded-full"></div>
+										</div>
+									</div>
+								</li>
+								<li class="group">
+									<button @click="mode = !mode" class="py-2 mx-8 flex">
+										<div class="p-1 w-14 h-6 rounded-full transition-all duration-300" :class="mode?'shadow-inner-multiple':'shadow-inner-white'">
+											<div class="h-full w-4 rounded-full transition-all duration-500" :class="mode?'translate-x-0':'translate-x-8'">
+												<i class='-ml-[7px] bx bxs-moon absolute transition-all duration-300' :class="mode?'opacity-100 ':'opacity-0'"></i>
+												<i class='-ml-[8px] bx bxs-sun absolute transition-all duration-300' :class="mode?'opacity-0':'opacity-100 text-white'"></i>
+											</div>
+										</div>
+									</button>
 								</li>
 							</ul>
 						</nav>
@@ -54,19 +112,28 @@
 	
 	<section class="relative md:-mt-20 lg:mt-1/2 -mt-5 overflow-hidden">
 		<div class="grid grid-cols-1 md:grid-cols-2">
-			<div class="flex flex-col items-center md:items-start md:justify-center p-10 -mb-24 md:h-screen lg:ml-16 xl:ml-32">
-				<h1 class="text-base sm:text-xl font-extrabold text-gray-700 lg:text-2xl">Hello Everyone!</h1>
-				<h1 class="text-base sm:text-xl font-bold text-gray-600 lg:text-2xl">My name is <span class="text-green-600">Fiernaz Ingga Pratama</span></h1>
-				<h2 class="text-xl sm:text-lg font-medium text-gray-600 lg:text-xl">Student & <span class="text-slate-400 underline">Programmer</span></h2>
-				<h1 class="text-base sm:text-xl font-bold text-gray-600 lg:text-2xl">UPN <span class="text-slate-900">Veteran</span> Yogyakarta</h1>
+			<div class="flex flex-col items-center md:items-start md:justify-center p-10 -mb-24 md:h-screen lg:ml-16 xl:ml-32 w-auto">
+				<h1 class="text-xl font-extrabold lg:text-2xl duration-500 transition-all" :class="!mode?'text-[#fffffe]':'text-gray-700'">Hello Everyone!</h1>
+				<h1 class="text-xl font-bold  lg:text-2xl flex duration-500 transition-all" :class="!mode?'text-[#94a1b2]':'text-gray-600'">My name is <span class="md:hidden ml-[7px] duration-500 transition-all inispan" :class="!mode?'text-[#7f5af0]':'text-green-600'">Fiernaz Ingga Pratama</span></h1>
+				<p class=" font-bold inip text-xl lg:text-2xl md:block" :class="!mode?'text-[#7f5af0]':'text-green-600'">Fiernaz Ingga Pratama</p>
+				<h2 class="text-xl font-medium  lg:text-xl duration-500 transition-all" :class="!mode?'text-[#94a1b2]':'text-gray-600'">Student & <span class="underline duration-500 transition-all" :class="!mode?'text-slate-300':'text-slate-400'">Programmer</span></h2>
+				<h1 class="text-xl font-bold lg:text-2xl duration-500 transition-all" :class="!mode ? 'text-[#fffffe]' : 'text-gray-600'">
+					UPN 
+					<span class="text-slate-900 duration-300 transition-all" 
+						  :class="!mode ? 'text-[#fffffe] border-b-2 border-[#fffffe]' : 'border-b-0'">
+					  Veteran
+					</span> 
+					Yogyakarta
+				  </h1>
+				  
 			</div>
 			
 					
 			<div class="relative md:h-screen flex items-center justify-center">
-				<img src="123.png" alt="" class="relative z-[10] md:w-[30em] lg:w-auto lg:max-w-[35em] xl:max-w-[40em] h-auto bluImage">
+				<img src="123.png" alt="" class="relative z-[10] md:w-[30em] lg:w-auto lg:max-w-[35em] xl:max-w-[40em] h-auto bluImage duration-500 transition-all" :class="!mode?'dropBlack':'dropWhite'">
 				<span class="absolute inset-0 flex items-center justify-center">
 					<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="md:w-[30em] lg:w-auto lg:max-w-[35em] xl:max-w-[40em]">
-						<path fill="#48bb78" d="M32.6,-59.5C42.2,-51,49.9,-42.1,56,-32.1C62.2,-22.1,66.8,-11.1,69.5,1.6C72.2,14.2,72.9,28.3,66.4,37.7C59.9,47,46.1,51.5,33.8,56.2C21.6,60.9,10.8,65.8,-0.3,66.4C-11.5,67,-22.9,63.2,-33.3,57.4C-43.6,51.6,-52.8,43.7,-57.8,33.8C-62.8,23.9,-63.6,11.9,-62.8,0.5C-62,-11,-59.6,-22.1,-55.4,-33.3C-51.1,-44.5,-45,-55.9,-35.5,-64.5C-25.9,-73,-13,-78.7,-0.7,-77.5C11.5,-76.3,23.1,-68.1,32.6,-59.5Z" transform="translate(100 100)" />
+						<path :fill="!mode?'#7f5af0':'#48bb78'" class=" duration-500 transition-all" :class="!mode?'dropWhite':'dropBlack'" d="M32.6,-59.5C42.2,-51,49.9,-42.1,56,-32.1C62.2,-22.1,66.8,-11.1,69.5,1.6C72.2,14.2,72.9,28.3,66.4,37.7C59.9,47,46.1,51.5,33.8,56.2C21.6,60.9,10.8,65.8,-0.3,66.4C-11.5,67,-22.9,63.2,-33.3,57.4C-43.6,51.6,-52.8,43.7,-57.8,33.8C-62.8,23.9,-63.6,11.9,-62.8,0.5C-62,-11,-59.6,-22.1,-55.4,-33.3C-51.1,-44.5,-45,-55.9,-35.5,-64.5C-25.9,-73,-13,-78.7,-0.7,-77.5C11.5,-76.3,23.1,-68.1,32.6,-59.5Z" transform="translate(100 100)" />
 					</svg>
 				</span>
 			</div>
@@ -79,25 +146,25 @@
 	<section class="p-5">
 		<div class="w-full flex justify-center mb-8 xl:hidden" data-aos="fade-up"
 		data-aos-duration="300">
-			<div class="flex justify-center items-center bg-transparent w-40 border-2 border-black h-12 rounded-xl shadow-lg blurImage">
-				<h1 class="text-2xl text-green-900 font-bold">About Me</h1>
+		<div class="flex justify-center items-center bg-transparent w-40 border-2 h-12 rounded-xl shadow-lg blurImage duration-500 transition-all" :class="!mode?'border-white dropWhite':'border-black dropBlack'">
+				<h1 class="text-2xl  font-bold duration-500 transition-all" :class="!mode?'text-[#fffffe]':'text-green-900'">About Me</h1>
 			</div>
 		</div>
 						
 		<div class="flex flex-col md:flex-row items-center justify-center">
 			<div class="hidden lg:block lg:w-[25em] xl:w-[25em] py-10 xl:-ml-[15em] 3xl:-ml-[50em]" data-aos="fade-down" data-aos-duration="1000">
-				<img src="public/images/gambar/forabout.JPG" class="rounded-lg blurImage" alt="For About">
+				<img src="public/images/gambar/forabout.JPG" class="rounded-lg  duration-500 transition-all" :class="!mode?'blurWhite':'blurImage'" alt="For About">
 			</div>
 			<div class="lg:w-[35em] xl:w-[40em]">
 				<div class="text-center md:py-5 lg:ml-20 xl:-mr-[15em] 3xl:-mr-[30em]">
-					<h1 class="hidden xl:block text-3xl mb-5 text-green-950 font-bold">About Me</h1>
-					<div class="card bg-transparent filter bg-blur pt-1 px-4 sm:rounded-lg sm:mb-3 lg:bg-[#004643] lg:p-3 lg:h-[15em] xl:h-[10em] rounded-xl blurImage lg:mb-3" data-aos="fade-right" data-aos-duration="1000">
-						<p class="mb-5 lg:text-[#abd1c6] sm:text-base md:text-lg text-[#004643] font-bold lg:font-thin leading-5 p-4 lg:p-0">
+					<h1 class="hidden xl:block text-3xl mb-5  font-bold duration-500 transition-all" :class="!mode?'text-[#fffffe]':'text-green-950'">About Me</h1>
+					<div class="card bg-transparent filter bg-blur pt-1 px-4 sm:rounded-lg sm:mb-3  lg:p-3 lg:h-[15em] xl:h-[10em] rounded-xl  lg:mb-3 duration-500 transition-all" :class="!mode?'lg:bg-[#242629] blurWhite':'lg:bg-[#004643] blurImage'" data-aos="fade-right blurImage" data-aos-duration="1000">
+						<p class="mb-5 lg:text-[#abd1c6] sm:text-base md:text-lg  font-bold lg:font-thin leading-5 p-4 lg:p-0 duration-500 transition-all" :class="!mode?'text-[#94a1b2]':'text-[#004643]'">
 							My name is Fiernaz Ingga Pratama, born in 2005. From an early age, I developed a strong interest in technology. I graduated from primary school in 2018, middle school in 2021, and vocational high school (SMK) in 2024 as the top graduate. In 2024, I began my studies in Informatics at the National Development University "Veteran" Yogyakarta. Currently, I am in my second semester at the university.
 						</p>
 					</div>
-					<div class="card bg-transparent filter bg-blur px-4 sm:rounded-lg sm:mb-3 lg:bg-[#004643] lg:font-thin font-bold lg:p-3 lg:h-[10em] xl:h-[6.5em] rounded-xl blurImage" data-aos="fade-left" data-aos-duration="1000">
-						<p class="sm:text-base md:text-lg mb-10 text-[#004643] leading-5 lg:text-[#abd1c6] p-4 lg:p-0">
+					<div class="card bg-transparent filter bg-blur px-4 sm:rounded-lg sm:mb-3 lg:font-thin font-bold lg:p-3 lg:h-[10em] xl:h-[6.5em] rounded-xl duration-500 transition-all" :class="!mode?'lg:bg-[#242629] blurWhite':'lg:bg-[#004643] blurImage'" data-aos="fade-left" data-aos-duration="1000">
+						<p class="sm:text-base md:text-lg mb-10 leading-5 lg:text-[#abd1c6] p-4 lg:p-0 duration-500 transition-all" :class="!mode?'text-[#94a1b2]':'text-[#004643]'">
 							I aspire to become a programmer and network engineer. I am committed to improving my skills and knowledge to achieve my career goals. With a passion for technology and a dedication to learning, I am excited about the opportunities and challenges ahead.
 						</p>
 					</div>
@@ -112,34 +179,49 @@
 		<div>
 			<div class="w-full flex justify-center mb-10"  data-aos="fade-up"
 			data-aos-duration="1000">
-				<div class="flex justify-center items-center bg-transparent w-40 border-2 border-black h-12 rounded-xl shadow-lg">
-					<h1 class="text-2xl text-green-950 font-bold">My Skills</h1>
+				<div class="flex justify-center items-center bg-transparent w-40 border-2  h-12 rounded-xl shadow-lg duration-500 transition-all" :class="!mode?'border-[#fffffe] blurWhite':'border-black blurImage'">
+					<h1 class="text-2xl  font-bold duration-500 transition-all" :class="!mode?'text-[#fffffe] blurImage':'text-green-950'">My Skills</h1>
 				</div>
 			</div>
 		
 			<div class="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
 				<div class="w-full flex justify-center mb-5" data-aos="fade-right" data-aos-duration="1000">
-					<div class="flex md:flex-col flex-row justify-start items-center bg-opacity-50 bg-transparent bg-blur lg:bg-white w-[90px] md:h-[90px] md:w-[270px] border-2 border-black rounded-md shadow-md p-2 filter lg:grayscale lg:hover:grayscale-0 transition duration-300 lg:hover:scale-110 blurImage">
-						<img src="/public/images/gambar_skills/html.png" alt="HTML" class="md:mb-0 -ml-[3px] md:-ml-0  md:mr-0 xl:mr-2 md:w-[60px] md:h-[55px] dropImage">
+					<div class="flex md:flex-col flex-row justify-start items-center bg-opacity-50 bg-transparent bg-blur w-[90px] md:h-[90px] md:w-[270px] border-2 rounded-md shadow-md p-2 filter lg:grayscale lg:hover:grayscale-0 transition duration-300 lg:hover:scale-110 blurImage" :class="{
+						'border-[#fffffe]' : !mode,
+						'border-black' : mode,
+						'lg:bg-white' : mode,
+						'lg:bg-[#242629]' : !mode
+					}">
+						<img src="/public/images/gambar_skills/html.png" alt="HTML" class="md:mb-0 -ml-[3px] md:-ml-0  md:mr-0 xl:mr-2 md:w-[60px] md:h-[55px] duration-500 transition-all" :class="!mode?'dropWhite':'dropImage'">
 						<p class="text-center hidden md:block mr-2 font-bold text-orange-500">HyperText Markup Language</p>
 					</div>
 				</div>
 		
 				<div class="md:hidden flex items-center justify-center h-[90px]">
-					<div class="bg-black w-2 h-[80px] rounded-xl"></div>
+					<div class=" w-2 h-[80px] rounded-xl duration-500 transition-all" :class="!mode?'bg-[#fffffe]':'bg-black'"></div>
 				</div>
 		
 				<div class="w-full flex justify-center mb-5" data-aos="fade-left" data-aos-duration="1000">
-					<div class="flex flex-row md:flex-col justify-center items-center bg-opacity-50 bg-transparent bg-blur lg:bg-white w-[90px] md:h-[90px] md:w-[270px] border-2 border-black rounded-md shadow-md p-2 filter lg:grayscale lg:hover:grayscale-0 transition duration-300 lg:hover:scale-110">
-						<img src="/public/images/gambar_skills/css.png" alt="CSS" class="md:w-[60px] md:h-[55px] dropImage">
+					<div class="flex flex-row md:flex-col justify-center items-center bg-opacity-50 bg-transparent bg-blur w-[90px] md:h-[90px] md:w-[270px] border-2 rounded-md shadow-md p-2 filter lg:grayscale lg:hover:grayscale-0 transition duration-300 lg:hover:scale-110" :class="{
+						'border-[#fffffe]' : !mode,
+						'border-black' : mode,
+						'lg:bg-white' : mode,
+						'lg:bg-[#242629]' : !mode
+					}">
+						<img src="/public/images/gambar_skills/css.png" alt="CSS" class="md:w-[60px] md:h-[55px] duration-500 transition-all" :class="!mode?'dropWhite':'dropImage'">
 						<p class="text-center hidden md:block mr-2 font-bold text-blue-400">Cascading Style Sheets</p>
 					</div>
 				</div>
 
 		
 				<div class="w-full flex justify-center mb-5" data-aos="fade-right" data-aos-duration="1000">
-					<div class="flex md:flex-col flex-row justify-center xl:justify-start items-center bg-opacity-50 bg-transparent bg-blur lg:bg-white w-[90px] md:h-[90px] md:w-[270px] border-2 border-black rounded-md shadow-md p-2 filter lg:grayscale lg:hover:grayscale-0 transition duration-300 lg:hover:scale-110">
-						<img src="/public/images/gambar_skills/php2.png" alt="PHP" class="md:w-[60px] md:h-[55px] mb-2 md:mb-0 md:mr-4 dropImage">
+					<div class="flex md:flex-col flex-row justify-center xl:justify-start items-center bg-opacity-50 bg-transparent bg-blur w-[90px] md:h-[90px] md:w-[270px] border-2 rounded-md shadow-md p-2 filter lg:grayscale lg:hover:grayscale-0 transition duration-300 lg:hover:scale-110" :class="{
+						'border-[#fffffe]' : !mode,
+						'border-black' : mode,
+						'lg:bg-white' : mode,
+						'lg:bg-[#242629]' : !mode
+					}">
+						<img src="/public/images/gambar_skills/php2.png" alt="PHP" class="md:w-[60px] md:h-[55px] mb-2 md:mb-0 md:mr-4 duration-500 transition-all" :class="!mode?'dropWhite':'dropImage'">
 						<p class="text-center hidden md:block mr-2 font-bold text-purple-700">Hypertext Preprocessor</p>
 					</div>
 				</div>
@@ -147,50 +229,75 @@
 				
 		
 				<div class="md:hidden flex items-center justify-center h-[90px]">
-					<div class="bg-black w-2 h-[90px] rounded-xl"></div>
+					<div class="w-2 h-[90px] rounded-xl  duration-500 transition-all" :class="!mode?'bg-[#fffffe]':'bg-black'"></div>
 				</div>
 		
 				<div class="w-full flex justify-center mb-5" data-aos="fade-left" data-aos-duration="1000">
-					<div class="flex flex-row md:flex-col justify-center items-center bg-opacity-50 bg-transparent bg-blur lg:bg-white w-[90px] md:h-[90px] md:w-[270px] border-2 border-black rounded-md shadow-md p-2 filter lg:grayscale lg:hover:grayscale-0 transition duration-300 lg:hover:scale-110">
-						<img src="/public/images/gambar_skills/laravel2.png" alt="CSS" class="md:w-[60px] md:h-[55px] dropImage">
+					<div class="flex flex-row md:flex-col justify-center items-center bg-opacity-50 bg-transparent bg-blur w-[90px] md:h-[90px] md:w-[270px] border-2 rounded-md shadow-md p-2 filter lg:grayscale lg:hover:grayscale-0 transition duration-300 lg:hover:scale-110" :class="{
+						'border-[#fffffe]' : !mode,
+						'border-black' : mode,
+						'lg:bg-white' : mode,
+						'lg:bg-[#242629]' : !mode
+					}">
+						<img src="/public/images/gambar_skills/laravel2.png" alt="CSS" class="md:w-[60px] md:h-[55px] duration-500 transition-all" :class="!mode?'dropWhite':'dropImage'">
 						<p class="text-center hidden md:block mr-2 font-extrabold text-red-600">Laravel</p>
 					</div>
 				</div>
 		
 				<div class="w-full flex justify-center mb-5" data-aos="fade-right" data-aos-duration="1000">
-					<div class="flex md:flex-col flex-row justify-center xl:justify-start items-center bg-opacity-50 bg-transparent bg-blur lg:bg-white w-[90px] h-[90px] md:w-[270px] border-2 border-black rounded-md shadow-md p-2 filter lg:grayscale lg:hover:grayscale-0 transition duration-300 lg:hover:scale-110">
-						<img src="/public/images/gambar_skills/tailwind2.png" alt="PHP" class="md:w-[60px] md:h-[40px] mb-2 xl:mb-0 md:mr-1 dropImage">
+					<div class="flex md:flex-col flex-row justify-center xl:justify-start items-center bg-opacity-50 bg-transparent bg-blur w-[90px] h-[90px] md:w-[270px] border-2 border-black rounded-md shadow-md p-2 filter lg:grayscale lg:hover:grayscale-0 transition duration-300 lg:hover:scale-110" :class="{
+						'border-[#fffffe]' : !mode,
+						'border-black' : mode,
+						'lg:bg-white' : mode,
+						'lg:bg-[#242629]' : !mode
+					}">
+						<img src="/public/images/gambar_skills/tailwind2.png" alt="PHP" class="md:w-[60px] md:h-[40px] mb-2 xl:mb-0 md:mr-1 duration-500 transition-all" :class="!mode?'dropWhite':'dropImage'">
 						<p class="text-center hidden md:block font-extrabold text-teal-300 borderText">Tailwind</p>
 					</div>
 				</div>
 				
 		
 				<div class="md:hidden flex items-center justify-center h-[90px]">
-					<div class="bg-black w-2 h-[90px] rounded-xl"></div>
+					<div class="w-2 h-[90px] rounded-xl  duration-500 transition-all" :class="!mode?'bg-[#fffffe]':'bg-black'"></div>
 				</div>
 		
 				<div class="w-full flex justify-center mb-5" data-aos="fade-left" data-aos-duration="1000">
-					<div class="flex flex-row md:flex-col justify-center items-center bg-opacity-50 bg-transparent bg-blur lg:bg-white w-[90px] md:h-[90px] md:w-[270px] border-2 border-black rounded-md shadow-md p-2 filter lg:grayscale lg:hover:grayscale-0 transition duration-300 lg:hover:scale-110">
-						<img src="/public/images/gambar_skills/alpine.png" alt="CSS" class="md:w-[60px] md:h-[55px] dropImage">
+					<div class="flex flex-row md:flex-col justify-center items-center bg-opacity-50 bg-transparent bg-blur w-[90px] md:h-[90px] md:w-[270px] border-2 rounded-md shadow-md p-2 filter lg:grayscale lg:hover:grayscale-0 transition duration-300 lg:hover:scale-110" :class="{
+						'border-[#fffffe]' : !mode,
+						'border-black' : mode,
+						'lg:bg-white' : mode,
+						'lg:bg-[#242629]' : !mode
+					}">
+						<img src="/public/images/gambar_skills/alpine.png" alt="CSS" class="md:w-[60px] md:h-[55px] duration-500 transition-all" :class="!mode?'dropWhite':'dropImage'">
 						<p class="text-center hidden md:block mr-2 font-extrabold borderText text-teal-200">Alpine JS</p>
 					</div>
 				</div>
 		
 				<div class="w-full flex justify-center mb-5" data-aos="fade-right" data-aos-duration="1000">
-					<div class="flex flex-row md:flex-col justify-center items-center bg-opacity-50 bg-transparent bg-blur lg:bg-white w-[90px] md:h-[90px] md:w-[270px] border-2 border-black rounded-md shadow-md p-2 filter lg:grayscale lg:hover:grayscale-0 transition duration-300 lg:hover:scale-110">
-						<img src="/public/images/gambar_skills/c++.png" alt="CSS" class="md:w-[60px] md:h-[55px] dropImage">
+					<div class="flex flex-row md:flex-col justify-center items-center bg-opacity-50 bg-transparent bg-blur w-[90px] md:h-[90px] md:w-[270px] border-2 rounded-md shadow-md p-2 filter lg:grayscale lg:hover:grayscale-0 transition duration-300 lg:hover:scale-110" :class="{
+						'border-[#fffffe]' : !mode,
+						'border-black' : mode,
+						'lg:bg-white' : mode,
+						'lg:bg-[#242629]' : !mode
+					}">
+						<img src="/public/images/gambar_skills/c++.png" alt="CSS" class="md:w-[60px] md:h-[55px] duration-500 transition-all" :class="!mode?'dropWhite':'dropImage'">
 						<p class="text-center hidden md:block mr-2 font-extrabold text-blue-800">Cplusplus</p>
 					</div>
 				</div>
 				
 		
 				<div class="md:hidden flex items-center justify-center h-[90px]">
-					<div class="bg-black w-2 h-[80px] rounded-xl"></div>
+					<div class=" duration-500 transition-all w-2 h-[80px] rounded-xl" :class="!mode?'bg-[#fffffe]':'bg-black'"></div>
 				</div>
 		
 				<div class="w-full flex justify-center mb-5" data-aos="fade-left" data-aos-duration="1000">
-					<div class="flex flex-row md:flex-col justify-center items-center bg-opacity-50 bg-transparent bg-blur lg:bg-white w-[90px] md:h-[90px] md:w-[270px] border-2 border-black rounded-md shadow-md p-2 filter lg:grayscale lg:hover:grayscale-0 transition duration-300 lg:hover:scale-110">
-						<img src="/public/images/gambar_skills/mysql2.png" alt="CSS" class="md:w-[60px] md:h-[55px] dropImage">
+					<div class="flex flex-row md:flex-col justify-center items-center bg-opacity-50 bg-transparent bg-blur w-[90px] md:h-[90px] md:w-[270px] border-2 rounded-md shadow-md p-2 filter lg:grayscale lg:hover:grayscale-0 transition duration-300 lg:hover:scale-110" :class="{
+						'border-[#fffffe]' : !mode,
+						'border-black' : mode,
+						'lg:bg-white' : mode,
+						'lg:bg-[#242629]' : !mode
+					}">
+						<img src="/public/images/gambar_skills/mysql2.png" alt="CSS" class="md:w-[60px] md:h-[55px] duration-500 transition-all" :class="!mode?'dropWhite':'dropImage'">
 						<p class="text-center hidden md:block mr-2 font-bold text-gray-600">My Structured Query Language</p>
 					</div>
 				</div>
