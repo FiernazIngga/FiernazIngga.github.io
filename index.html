@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="css/stylecss.css">
+    <link rel="stylesheet" href="public/css/stylecss.css">
 	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body class="bg-[url('bgblur.jpg')] bg-cover bg-center">
 
@@ -54,10 +55,10 @@
 	<section class="relative md:-mt-20 lg:mt-1/2 -mt-5 overflow-hidden">
 		<div class="grid grid-cols-1 md:grid-cols-2">
 			<div class="flex flex-col items-center md:items-start md:justify-center p-10 -mb-24 md:h-screen lg:ml-16 xl:ml-32">
-				<h1 class="text-xl font-extrabold text-gray-700 lg:text-2xl">Hello Everyone!</h1>
-				<h1 class="text-xl font-bold text-gray-600 lg:text-2xl">My name is <span class="text-green-600">Fiernaz Ingga Pratama</span></h1>
-				<h2 class="text-lg font-medium text-gray-600 lg:text-xl">Student & <span class="text-slate-400 underline">Programmer</span></h2>
-				<h1 class="text-xl font-bold text-gray-600 lg:text-2xl">UPN <span class="text-slate-900">Veteran</span> Yogyakarta</h1>
+				<h1 class="text-base sm:text-xl font-extrabold text-gray-700 lg:text-2xl">Hello Everyone!</h1>
+				<h1 class="text-base sm:text-xl font-bold text-gray-600 lg:text-2xl">My name is <span class="text-green-600">Fiernaz Ingga Pratama</span></h1>
+				<h2 class="text-xl sm:text-lg font-medium text-gray-600 lg:text-xl">Student & <span class="text-slate-400 underline">Programmer</span></h2>
+				<h1 class="text-base sm:text-xl font-bold text-gray-600 lg:text-2xl">UPN <span class="text-slate-900">Veteran</span> Yogyakarta</h1>
 			</div>
 			
 					
@@ -892,7 +893,7 @@
 				<div class="flex items-center space-x-2 w-3/4 justify-center lg:hidden">
 					<a href="" target="_blank" class="flex items-center justify-center text-white bg-green-500 hover:scale-105 transition green border-[2px] border-green-500 duration-300 w-full rounded-full">
 						<i class='bx bxl-whatsapp text-3xl'></i>
-						<p class="ml-2 text-lg">WhatsApp</p>
+						<p class="ml-0 sm:ml-2 text-base sm:text-lg">WhatsApp</p>
 					</a>
 				</div>
 
@@ -900,7 +901,7 @@
 				<div class="flex items-center space-x-2 w-3/4 justify-center lg:hidden">
 					<a href="https://www.instagram.com/finz_pratama/profilecard/?igsh=NmVwNDk2OG1zYXRs" target="_blank" class="flex items-center justify-center text-white bg-pink-500 hover:scale-105 transition duration-300 border-[2px] pinke border-pink-500 w-full rounded-full">
 						<i class='bx bxl-instagram text-3xl'></i>
-						<p class="ml-2 text-lg">Instagram</p>
+						<p class="ml-0 sm:ml-2 text-base sm:text-lg">Instagram</p>
 					</a>
 				</div>
 
@@ -925,6 +926,10 @@
 		
 	</section>
 
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script>
+		AOS.init();
+	  </script>
 <script src="//unpkg.com/alpinejs" defer></script>
 </body>
 </html>
