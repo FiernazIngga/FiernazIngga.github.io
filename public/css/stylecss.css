@@ -1,49 +1,36 @@
-/* Navbar */
-.navbar, .nav {
-    backdrop-filter: blur(8px); /* sedikit lebih blur agar tampak lebih modern */
-    box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
-    background-color: rgba(255, 255, 255, 0.7); /* transparan dengan sedikit warna putih */
-}
 
-* {
-    box-sizing: border-box;  /* Menghindari elemen melampaui lebar layar */
-}
-
-html, body {
-    overflow-x: hidden;
-}
 
 header div .nav {
-    color: #2d3748; /* warna font lebih gelap dan netral untuk navbar */
+    color: #2d3748; 
 }
 
-/* Body */
+
 body {
-    font-family: 'Arial', sans-serif; /* Gaya font modern */
+    font-family: 'Arial', sans-serif;
 }
 
-/* Menyesuaikan warna teks */
+
 h1, h2 {
-    color: #2d3748; /* Warna gelap agar kontras dengan latar belakang */
+    color: #2d3748;
 }
 
 h1 span {
-    color: #48bb78; /* Hijau yang lebih cerah untuk aksen */
+    color: #48bb78; 
 }
 
 h2 span {
-    color: #e53e3e; /* Warna merah untuk highlight */
+    color: #e53e3e;
 }
 
-/* Hover effect */
+
 .group:hover a {
-    color: #48bb78; /* Warna hijau saat hover pada link */
+    color: #48bb78; 
 }
 
 
-/* Mengatur gaya untuk icon/hamberger menu */
+
 #hamburger span {
-    background-color: #38a169; /* Warna hijau untuk ikon menu */
+    background-color: #38a169;
 }
 
 .blurImage {
