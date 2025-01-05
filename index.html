@@ -455,12 +455,14 @@
 							<h1 class="text-base font-bold w-full flex justify-center">MikroTik Certified Network Associate</h1>
 						</div>
 						<button @click="tamMtcna = !tamMtcna" class="text-right right-0 w-full">
-							<p x-show="!tamMtcna" class="text-blue-500 font-bold">Show Less</p>
-							<p x-show="tamMtcna" class="text-blue-500 font-bold">Show More</p>
+							<p x-show="!tamMtcna" class="text-blue-500 font-bold">Hide</p>
+							<p x-show="tamMtcna" class="text-blue-500 font-bold">Show</p>
 						</button>
 					</div>
 					<div class="p-3 max-w-[50em] items-center flex justify-center -mt-2">
-						<p class="mt-2 text-center text-gray-600">
+						<p class="mt-2 text-center text-gray-600 transition-all" :class="tamMtcna?'opacity-0':'opacity-100'"
+						x-transition:enter="transition-opacity duration-100"
+						x-transition:leave="transition-opacity duration-300">
 							Sertifikasi yang diberikan oleh MikroTik, perusahaan yang dikenal dengan perangkat jaringan mereka, bertujuan untuk memastikan bahwa seseorang memiliki pemahaman dasar dan keterampilan dalam mengelola dan mengkonfigurasi jaringan menggunakan perangkat MikroTik.
 						</p>
 					</div>
@@ -477,8 +479,8 @@
 		x-transition:leave-start="opacity-100"
 		x-transition:leave-end="opacity-0"
 		class="p-10 fixed z-50 inset-0 bg-black bg-opacity-70 backdrop-blur-md flex justify-center items-center">
-			<div @click.outside="mtcre = false" class="mx-auto rounded-md p-2" x-data="{ tamMtcna: true }">
-				<div class="max-w-sm mx-auto bg-white shadow-lg rounded-lg transition-all duration-500 overflow-hidden" :class="tamMtcna?'h-[23em] md:h-[22em]':'h-[37em]'">
+			<div @click.outside="mtcre = false" class="mx-auto rounded-md p-2" x-data="{ tammtcre: true }">
+				<div class="max-w-sm mx-auto bg-white shadow-lg rounded-lg transition-all duration-500 overflow-hidden" :class="tammtcre?'h-[23em] md:h-[22em]':'h-[37em]'">
 					<div class="bg-cover bg-center p-4">
 						<div class="w-full h-6 grid grid-cols-2">
 							<div class="flex flex-row">
@@ -488,23 +490,25 @@
 							</div>
 							<div class="w-full pr-1">
 								<h1 class="text-right font-bold text-base">
-									<button @click="mtcna=!mtcna">Kembali</button>
+									<button @click="mtcre=!mtcre">Kembali</button>
 								</h1>
 							</div>
 						</div>
-						<img src="/public/images/serti_gambar/mtcna.png" alt="">
+						<img src="/public/images/serti_gambar/mtcre.png" alt="">
 						<h1 class="text-base font-bold w-full flex justify-center md:hidden">MikroTik Certified</h1>
 						<h1 class="text-base font-bold w-full flex justify-center md:hidden">Network Associate</h1>
 						<div class="hidden md:block">
 							<h1 class="text-base font-bold w-full flex justify-center">MikroTik Certified Network Associate</h1>
 						</div>
-						<button @click="tamMtcna = !tamMtcna" class="text-right right-0 w-full">
-							<p x-show="!tamMtcna" class="text-blue-500 font-bold">Show Less</p>
-							<p x-show="tamMtcna" class="text-blue-500 font-bold">Show More</p>
+						<button @click="tammtcre = !tammtcre" class="text-right right-0 w-full">
+							<p x-show="!tammtcre" class="text-blue-500 font-bold">Hide</p>
+							<p x-show="tammtcre" class="text-blue-500 font-bold">Show</p>
 						</button>
 					</div>
 					<div class="p-3 max-w-[50em] items-center flex justify-center -mt-2">
-						<p class="mt-2 text-center text-gray-600">
+						<p class="mt-2 text-center text-gray-600 transition-all"  :class="tammtcre?'opacity-0':'opacity-100'"
+						x-transition:enter="transition-opacity duration-100"
+						x-transition:leave="transition-opacity duration-300">
 							Sertifikasi yang diberikan oleh MikroTik, perusahaan yang dikenal dengan perangkat jaringan mereka, bertujuan untuk memastikan bahwa seseorang memiliki pemahaman dasar dan keterampilan dalam mengelola dan mengkonfigurasi jaringan menggunakan perangkat MikroTik.
 						</p>
 					</div>
@@ -541,12 +545,14 @@
 							<h1 class="text-base font-bold w-full flex justify-center">Olimpiade Jaringan MikroTik</h1>
 						</div>
 						<button @click="tamojm = !tamojm" class="text-right right-0 w-full">
-							<p x-show="!tamojm" class="text-blue-500 font-bold">Show Less</p>
-							<p x-show="tamojm" class="text-blue-500 font-bold">Show More</p>
+							<p x-show="!tamojm" class="text-blue-500 font-bold">Hide</p>
+							<p x-show="tamojm" class="text-blue-500 font-bold">Show</p>
 						</button>
 					</div>
 					<div class="p-3 max-w-[50em] items-center flex justify-center -mt-2">
-						<p class="mt-2 text-center text-gray-600">
+						<p class="mt-2 text-center text-gray-600 transition-all"  :class="tamojm?'opacity-0':'opacity-100'"
+						x-transition:enter="transition-opacity duration-100"
+						x-transition:leave="transition-opacity duration-300">
 							Olimpiade Jaringan Mikrotik adalah lomba tingkat nasional yang diselenggarakan oleh PT Citraweb Solusi Teknologi. Lomba ini mengundang siswa SMK dari jurusan Teknik Komputer dan Jaringan (TKJ) serta Sistem Informatika Jaringan dan Aplikasi (SIJA) untuk mengikuti berbagai tahap seleksi yang menguji pengetahuan dan keterampilan mereka di dunia jaringan.					</div>
 				</div>
 			</div>
@@ -561,7 +567,7 @@
 		x-transition:leave-end="opacity-0"
 		class="p-10 fixed z-50 inset-0 bg-black bg-opacity-70 backdrop-blur-md flex justify-center items-center">
 			<div @click.outside="pkl = false" class="mx-auto rounded-md p-2" x-data="{ tampkl: true }">
-				<div class="max-w-sm mx-auto bg-white shadow-lg rounded-lg transition-all duration-500 overflow-hidden" :class="tampkl?'h-[23em] md:h-[22em]':'h-[50em]'">
+				<div class="max-w-sm mx-auto bg-white shadow-lg rounded-lg transition-all duration-500 overflow-hidden" :class="tampkl?'h-[23em] md:h-[22em]':'h-[55em]'">
 					<div class="bg-cover bg-center p-4">
 						<div class="w-full h-6 grid grid-cols-2">
 							<div class="flex flex-row">
@@ -582,12 +588,14 @@
 							<h1 class="text-base font-bold w-full flex justify-center">Praktek Kerja Lapangan</h1>
 						</div>
 						<button @click="tampkl = !tampkl" class="text-right right-0 w-full">
-							<p x-show="!tampkl" class="text-blue-500 font-bold">Show Less</p>
-							<p x-show="tampkl" class="text-blue-500 font-bold">Show More</p>
+							<p x-show="!tampkl" class="text-blue-500 font-bold">Hide</p>
+							<p x-show="tampkl" class="text-blue-500 font-bold">Show</p>
 						</button>
 					</div>
 					<div class="p-3 max-w-[50em] items-center flex flex-wrap justify-center -mt-2">
-						<p class="mt-2 text-center text-gray-600">
+						<p class="mt-2 text-center text-gray-600 transition-all" :class="tampkl?'opacity-0':'opacity-100'"
+						x-transition:enter="transition-opacity duration-100"
+						x-transition:leave="transition-opacity duration-300">
 							PT Gmedia adalah perusahaan penyedia layanan internet di Yogyakarta. Mereka menawarkan berbagai layanan teknologi informasi seperti akses internet, cloud computing, artificial intelligence, internet of things (IoT), software, dan aplikasi. Gmedia juga menyediakan layanan konsultasi IT dan solusi untuk kebutuhan bisnis.
 						</p>
 						<p class="mt-2 text-center text-gray-600">
@@ -628,12 +636,14 @@
 							<h1 class="text-base font-bold w-full flex justify-center">Lomba Kompetensi Siswa</h1>
 						</div>
 						<button @click="tamlks = !tamlks" class="text-right right-0 w-full">
-							<p x-show="!tamlks" class="text-blue-500 font-bold">Show Less</p>
-							<p x-show="tamlks" class="text-blue-500 font-bold">Show More</p>
+							<p x-show="!tamlks" class="text-blue-500 font-bold">Hide</p>
+							<p x-show="tamlks" class="text-blue-500 font-bold">Show</p>
 						</button>
 					</div>
 					<div class="p-3 max-w-[50em] items-center flex justify-center -mt-2">
-						<p class="mt-2 text-center text-gray-600">
+						<p class="mt-2 text-center text-gray-600 transition-all" :class="tamlks?'opacity-0':'opacity-100'"
+						x-transition:enter="transition-opacity duration-100"
+						x-transition:leave="transition-opacity duration-300">
 							Lomba Kompetensi Siswa (LKS) Kelompok Teknologi Daerah Istimewa Yogyakarta (DIY) pada bidang IT Network Systems Administration tahun 2023 adalah sebuah kompetisi yang menguji keahlian siswa SMK dalam teknologi sistem administrasi server dan jaringan. Tujuan lomba ini adalah untuk mempromosikan potensi siswa SMK kepada dunia usaha/industri sebagai pengguna tamatan/lulusan.
 						</p>
 					</div>
@@ -648,22 +658,22 @@
 		<div class="flex flex-col justify-center bg-[#d1d1e9] blurImage h-[30em] lg:h-[15em] w-3/4 rounded-2xl" data-aos="fade-up" data-aos-duration="1000">
             <h1 class="text-[#2b2c34] font-bold text-center text-2xl lg:block">Find Me On</h1>
 			<div class="p-3 flex flex-col lg:flex-row justify-center items-center">
-				<a href="#home" class="flex h-auto w-1/2 lg:mr-4 my-5 border-[2px] group bg-transparent lg:bg-green-500 lg:border-[1.5px] lg:border-black border-green-500 justify-center lg:-translate-y-[10px] items-center rounded-full lg:w-[2.5em] pl-[4.5px] lg:hover:w-[13em] transition-all duration-500">
+				<a href="#home" class="flex h-auto w-3/4 md:w-1/2 lg:mr-4 my-5 border-[2px] group bg-transparent lg:bg-green-500 lg:border-[1.5px] lg:border-black border-green-500 justify-center lg:-translate-y-[10px] items-center rounded-full lg:w-[2.5em] pl-[4.5px] lg:hover:w-[13em] transition-all duration-500">
 					<i class='bx bxl-whatsapp text-3xl mr-1 lg:group-hover:-translate-x-10 transition-all duration-500 lg:text-white text-green-500'></i>
 					<h1 class="lg:hidden text-green-500">WhatsApp</h1>
                     <h1 class="opacity-0 absolute lg:group-hover:opacity-100 lg:group-hover:translate-x-4 transition-all duration-500 text-white">WhatsApp</h1>
 				</a>
-				<a href="https://www.instagram.com/finz_pratama/profilecard/?igsh=NmVwNDk2OG1zYXRs" class="flex h-auto w-1/2 group lg:mr-4 mb-5 justify-center items-center rounded-full lg:w-[2.5em] pl-[4.5px] lg:hover:w-[13em] transition-all duration-500 bg-transparent lg:bg-pink-500 lg:border-[1.5px] lg:border-black border-pink-500 border-[2px]">
+				<a href="https://www.instagram.com/finz_pratama/profilecard/?igsh=NmVwNDk2OG1zYXRs" class="flex h-auto w-3/4 md:w-1/2 group lg:mr-4 mb-5 justify-center items-center rounded-full lg:w-[2.5em] pl-[4.5px] lg:hover:w-[13em] transition-all duration-500 bg-transparent lg:bg-pink-500 lg:border-[1.5px] lg:border-black border-pink-500 border-[2px]">
 					<i class='bx bxl-instagram text-3xl mr-1 lg:group-hover:-translate-x-10 transition-all duration-500 text-pink-500 lg:text-white'></i>
 					<h1 class="lg:hidden text-pink-500">Instagram</h1>
                     <h1 class="opacity-0 absolute text-white lg:group-hover:opacity-100 lg:group-hover:translate-x-4 transition-all duration-500">Instagram</h1>
 				</a>
-				<a href="https://www.tiktok.com/@finz_pratama?_t=ZS-8sjRKjEPRZg&_r=1" class="flex h-auto w-1/2 group lg:mr-4 mb-5 justify-center items-center rounded-full lg:w-[2.5em] pl-[4.5px] lg:hover:w-[13em] transition-all duration-500 bg-transparent lg:bg-black lg:border-[1.5px] border-black border-[2px]">
+				<a href="https://www.tiktok.com/@finz_pratama?_t=ZS-8sjRKjEPRZg&_r=1" class="flex h-auto w-3/4 md:w-1/2 group lg:mr-4 mb-5 justify-center items-center rounded-full lg:w-[2.5em] pl-[4.5px] lg:hover:w-[13em] transition-all duration-500 bg-transparent lg:bg-black lg:border-[1.5px] border-black border-[2px]">
 					<i class='bx bxl-tiktok text-3xl mr-1 lg:group-hover:-translate-x-8 transition-all duration-500 lg:text-white'></i>
 					<h1 class="lg:hidden">TikTok</h1>
                     <h1 class="opacity-0 absolute lg:group-hover:opacity-100 lg:group-hover:translate-x-4 transition-all duration-500 text-white">TikTok</h1>
 				</a>
-				<a href="#home" class="flex h-auto w-1/2 group lg:mr-4 mb-5 border justify-center items-center rounded-full lg:w-[2.5em] pl-[4.5px] lg:hover:w-[13em] transition-all duration-500 bg-transparent lg:bg-[#A52A2A] lg:border-[1.5px] lg:border-black border-[#A52A2A]">
+				<a href="#home" class="flex h-auto w-3/4 md:w-1/2 group lg:mr-4 mb-5 border justify-center items-center rounded-full lg:w-[2.5em] pl-[4.5px] lg:hover:w-[13em] transition-all duration-500 bg-transparent lg:bg-[#A52A2A] lg:border-[1.5px] lg:border-black border-[#A52A2A]">
 					<i class='bx bx-envelope text-3xl mr-1 lg:group-hover:-translate-x-8 transition-all duration-500 text-[#A52A2A] lg:text-white'></i>
 					<h1 class="lg:hidden">Email</h1>
                     <h1 class="opacity-0 absolute lg:group-hover:opacity-100 lg:group-hover:translate-x-4 transition-all duration-500 text-white">Email</h1>
