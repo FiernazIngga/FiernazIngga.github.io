@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth" x-data="{mode: false}">
+<html lang="en" class="scroll-smooth" x-data="{mode: true}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,16 +9,16 @@
 	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
-<body class="bg-cover bg-center transition-all duration-500" :style="{'background-image': mode ? 'url(\'bgblur.jpg\')' : 'url(\'bgblurdark.jpg\')'}">
+<body>
 
-	<div class="p-5 absolute top-0 z-50" id="home">	</div>
+	<div class="p-5 absolute top-0 z-50 bg-[#fffffe]" id="home">	</div>
 
 	<div class="p-5 sticky top-0 z-50">
 		<header class="navbar rounded-xl top-0 left-0 w-full flex items-center bg-opacity-90 z-50 duration-500 transition-all" :class="!mode?'bg-black':' bg-white'">	
 			<div class="container mx-auto">
 				<div class="flex items-center justify-between relative" x-data="{rotate: true}">
 					<div class="px-4">
-						<a href="#home" class="font-bold text-lg block py-6 ml-3 duration-500 transition-all" :class="!mode?'text-[#7f5af0]':'text-green-800'">fiernazingga</a>
+						<a href="#home" class="font-bold text-lg block py-6 ml-3 duration-500 transition-all" :class="!mode?'text-[#7f5af0]':'text-[#6246ea]'">fiernazingga</a>
 					</div>
 					<div @click.outside="rotate = true" class="flex items-center px-4">
 						<button @click="rotate = !rotate" id="hamburger" name="hamburger" class="block lg:hidden absolute right-4">
@@ -27,21 +27,21 @@
 								'rotate-0' : rotate,
 								'rotate-45' : !rotate,
 								'bg-[#7f5af0]' : !mode,
-								'bg-green-600' : mode
+								'bg-[#6246ea]' : mode
 							}" 
 							class="w-[30px] h-[2px] my-2 block  origin-top-left transition duration-500"></span>
 							<span :class="{
 								'opacity-0' : !rotate,
 								'opacity-100' : rotate,
 								'bg-[#7f5af0]' : !mode,
-								'bg-green-600' : mode
-							}" class="w-[30px] h-[2px] my-2 block bg-green-600 transition duration-500"></span>
+								'bg-[#6246ea]' : mode
+							}" class="w-[30px] h-[2px] my-2 block bg-[#6246ea] transition duration-500"></span>
 							<span :class="{
 								'rotate-0' : rotate,
 								'-rotate-45' : !rotate,
 								'bg-[#7f5af0]' : !mode,
-								'bg-green-600' : mode
-							}" class="w-[30px] h-[2px] my-2 block bg-green-600 origin-top-left transition duration-500"></span>
+								'bg-[#6246ea]' : mode
+							}" class="w-[30px] h-[2px] my-2 block bg-[#6246ea] origin-top-left transition duration-500"></span>
 						</button>
 						<nav id="navMenu" class="lg:block lg:static lg:bg-transparent lg:max-w-full"
 						:class="{
@@ -52,42 +52,42 @@
 						}">
 							<ul class="block lg:flex lg:ml-auto">
 								<li class="group">
-									<a href="#home" class="relative text-base py-2 mx-8 flex group-hover:text-green-600 transition duration-200 lg:duration-300" :class="mode?'text-black':'text-white'">Home</a>
+									<a href="#home" class="relative text-base py-2 mx-8 flex group-hover:text-[#6246ea] transition duration-200 lg:duration-300" :class="mode?'text-black':'text-white'">Home</a>
 									<div class="hidden lg:block">
 										<div class="w-[6.5em] flex h-1 -mt-[0.7em] absolute items-center justify-center">
-											<div class="w-0 group-hover:w-[4em] transition-all duration-300 h-1 bg-green-600 rounded-full"></div>
+											<div class="w-0 group-hover:w-[4em] transition-all duration-300 h-1 bg-[#6246ea] rounded-full"></div>
 										</div>
 									</div>
 								</li>
 								<li class="group">
-									<a href="#about" class="text-base py-2 mx-8 flex group-hover:text-green-600 transition duration-200 lg:duration-300" :class="mode?'text-black':'text-white'">About Me</a>
+									<a href="#about" class="text-base py-2 mx-8 flex group-hover:text-[#6246ea] transition duration-200 lg:duration-300" :class="mode?'text-black':'text-white'">About Me</a>
 									<div class="hidden lg:block">
 										<div class="w-[8em] flex h-1 -mt-[0.7em] absolute items-center justify-center">
-											<div class="w-0 group-hover:w-[6em] transition-all duration-300 h-1 bg-green-600 rounded-full"></div>
+											<div class="w-0 group-hover:w-[6em] transition-all duration-300 h-1 bg-[#6246ea] rounded-full"></div>
 										</div>
 									</div>
 								</li>
 								<li class="group">
-									<a href="#skill" class="text-base py-2 mx-8 flex group-hover:text-green-600 transition duration-200 lg:duration-300" :class="mode?'text-black':'text-white'">Skill</a>
+									<a href="#skill" class="text-base py-2 mx-8 flex group-hover:text-[#6246ea] transition duration-200 lg:duration-300" :class="mode?'text-black':'text-white'">Skill</a>
 									<div class="hidden lg:block">
 										<div class="w-[6em] flex h-1 -mt-[0.7em] absolute items-center justify-center">
-											<div class="w-0 group-hover:w-[3em] transition-all duration-300 h-1 bg-green-600 rounded-full"></div>
+											<div class="w-0 group-hover:w-[3em] transition-all duration-300 h-1 bg-[#6246ea] rounded-full"></div>
 										</div>
 									</div>
 								</li>
 								<li class="group">
-									<a href="#certificate" class="text-base py-2 mx-8 flex group-hover:text-green-600 transition duration-200 lg:duration-300" :class="mode?'text-black':'text-white'">Certificate</a>
+									<a href="#certificate" class="text-base py-2 mx-8 flex group-hover:text-[#6246ea] transition duration-200 lg:duration-300" :class="mode?'text-black':'text-white'">Certificate</a>
 									<div class="hidden lg:block">
 										<div class="w-[8.5em] flex h-1 -mt-[0.7em] absolute items-center justify-center">
-											<div class="w-0 group-hover:w-[6em] transition-all duration-300 h-1 bg-green-600 rounded-full"></div>
+											<div class="w-0 group-hover:w-[6em] transition-all duration-300 h-1 bg-[#6246ea] rounded-full"></div>
 										</div>
 									</div>
 								</li>
 								<li class="group">
-									<a href="#contact" class="text-base py-2 mx-8 flex group-hover:text-green-600 transition duration-200 lg:duration-300" :class="mode?'text-black':'text-white'">Contact</a>
+									<a href="#contact" class="text-base py-2 mx-8 flex group-hover:text-[#6246ea] transition duration-200 lg:duration-300" :class="mode?'text-black':'text-white'">Contact</a>
 									<div class="hidden lg:block">
 										<div class="w-[8em] flex h-1 -mt-[0.7em] absolute items-center justify-center">
-											<div class="w-0 group-hover:w-[5em] transition-all duration-300 h-1 bg-green-600 rounded-full"></div>
+											<div class="w-0 group-hover:w-[5em] transition-all duration-300 h-1 bg-[#6246ea] rounded-full"></div>
 										</div>
 									</div>
 								</li>
@@ -110,12 +110,12 @@
 	</div>
 
 	
-	<section class="relative md:-mt-20 lg:mt-1/2 -mt-5 overflow-hidden">
+	<section class="relative md:-mt-20 lg:mt-1/2 -mt-5 overflow-hidden bg-[#fffffe]">
 		<div class="grid grid-cols-1 md:grid-cols-2">
 			<div class="flex flex-col items-center md:items-start md:justify-center p-10 -mb-24 md:h-screen lg:ml-16 xl:ml-32 w-auto">
 				<h1 class="text-xl font-extrabold lg:text-2xl duration-500 transition-all" :class="!mode?'text-[#fffffe]':'text-gray-700'">Hello Everyone!</h1>
-				<h1 class="text-xl font-bold  lg:text-2xl flex duration-500 transition-all" :class="!mode?'text-[#94a1b2]':'text-gray-600'">My name is <span class="md:hidden ml-[7px] duration-500 transition-all inispan" :class="!mode?'text-[#7f5af0]':'text-green-600'">Fiernaz Ingga Pratama</span></h1>
-				<p class=" font-bold inip text-xl lg:text-2xl md:block" :class="!mode?'text-[#7f5af0]':'text-green-600'">Fiernaz Ingga Pratama</p>
+				<h1 class="text-xl font-bold  lg:text-2xl flex duration-500 transition-all" :class="!mode?'text-[#94a1b2]':'text-gray-600'">My name is <span class="md:hidden ml-[7px] duration-500 transition-all inispan" :class="!mode?'text-[#7f5af0]':'text-[#6246ea]'">Fiernaz Ingga Pratama</span></h1>
+				<p class=" font-bold inip text-xl lg:text-2xl md:block" :class="!mode?'text-[#7f5af0]':'text-[#6246ea]'">Fiernaz Ingga Pratama</p>
 				<h2 class="text-xl font-medium  lg:text-xl duration-500 transition-all" :class="!mode?'text-[#94a1b2]':'text-gray-600'">Student & <span class="underline duration-500 transition-all" :class="!mode?'text-slate-300':'text-slate-400'">Programmer</span></h2>
 				<h1 class="text-xl font-bold lg:text-2xl duration-500 transition-all" :class="!mode ? 'text-[#fffffe]' : 'text-gray-600'">
 					UPN 
@@ -133,7 +133,7 @@
 				<img src="123.png" alt="" class="relative z-[10] md:w-[30em] lg:w-auto lg:max-w-[35em] xl:max-w-[40em] h-auto bluImage duration-500 transition-all" :class="!mode?'dropBlack':'dropWhite'">
 				<span class="absolute inset-0 flex items-center justify-center">
 					<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="md:w-[30em] lg:w-auto lg:max-w-[35em] xl:max-w-[40em]">
-						<path :fill="!mode?'#7f5af0':'#48bb78'" class=" duration-500 transition-all" :class="!mode?'dropWhite':'dropBlack'" d="M32.6,-59.5C42.2,-51,49.9,-42.1,56,-32.1C62.2,-22.1,66.8,-11.1,69.5,1.6C72.2,14.2,72.9,28.3,66.4,37.7C59.9,47,46.1,51.5,33.8,56.2C21.6,60.9,10.8,65.8,-0.3,66.4C-11.5,67,-22.9,63.2,-33.3,57.4C-43.6,51.6,-52.8,43.7,-57.8,33.8C-62.8,23.9,-63.6,11.9,-62.8,0.5C-62,-11,-59.6,-22.1,-55.4,-33.3C-51.1,-44.5,-45,-55.9,-35.5,-64.5C-25.9,-73,-13,-78.7,-0.7,-77.5C11.5,-76.3,23.1,-68.1,32.6,-59.5Z" transform="translate(100 100)" />
+						<path :fill="!mode?'#7f5af0':'#6246ea'" class=" duration-500 transition-all" :class="!mode?'dropWhite':'dropBlack'" d="M32.6,-59.5C42.2,-51,49.9,-42.1,56,-32.1C62.2,-22.1,66.8,-11.1,69.5,1.6C72.2,14.2,72.9,28.3,66.4,37.7C59.9,47,46.1,51.5,33.8,56.2C21.6,60.9,10.8,65.8,-0.3,66.4C-11.5,67,-22.9,63.2,-33.3,57.4C-43.6,51.6,-52.8,43.7,-57.8,33.8C-62.8,23.9,-63.6,11.9,-62.8,0.5C-62,-11,-59.6,-22.1,-55.4,-33.3C-51.1,-44.5,-45,-55.9,-35.5,-64.5C-25.9,-73,-13,-78.7,-0.7,-77.5C11.5,-76.3,23.1,-68.1,32.6,-59.5Z" transform="translate(100 100)" />
 					</svg>
 				</span>
 			</div>
@@ -141,30 +141,30 @@
 	</section>
 	
 <div class="overflow-hidden">
-	<div id="about" class="mb-[7em] -mt-[5em]"></div>
+	<div id="about" class="bg-[#d1d1e9] mb-[7em] -mt-[7em]"></div>
 
-	<section class="p-5">
+	<section class="p-5 bg-[#d1d1e9]">
 		<div class="w-full flex justify-center mb-8 xl:hidden" data-aos="fade-up"
 		data-aos-duration="300">
-		<div class="flex justify-center items-center bg-transparent w-40 border-2 h-12 rounded-xl shadow-lg blurImage duration-500 transition-all" :class="!mode?'border-white dropWhite':'border-black dropBlack'">
-				<h1 class="text-2xl  font-bold duration-500 transition-all" :class="!mode?'text-[#fffffe]':'text-green-900'">About Me</h1>
+			<div class="flex justify-center items-center bg-transparent w-40 border-2  h-12 rounded-xl shadow-lg  mt-[2em] duration-500 transition-all" :class="!mode?'border-[#fffffe] blurWhite':'border-black blurImage'">
+				<h1 class="text-2xl  font-bold duration-500 transition-all" :class="!mode?'text-[#fffffe] blurImage':'text-[#2b2c34]'">About Me</h1>
 			</div>
 		</div>
 						
 		<div class="flex flex-col md:flex-row items-center justify-center">
 			<div class="hidden lg:block lg:w-[25em] xl:w-[25em] py-10 xl:-ml-[15em] 3xl:-ml-[50em]" data-aos="fade-down" data-aos-duration="1000">
-				<img src="public/images/gambar/forabout.JPG" class="rounded-lg  duration-500 transition-all" :class="!mode?'blurWhite':'blurImage'" alt="For About">
+				<img src="public/images/gambar/forabout.JPG" class="rounded-lg dropBlack duration-500 transition-all" alt="For About">
 			</div>
 			<div class="lg:w-[35em] xl:w-[40em]">
 				<div class="text-center md:py-5 lg:ml-20 xl:-mr-[15em] 3xl:-mr-[30em]">
-					<h1 class="hidden xl:block text-3xl mb-5  font-bold duration-500 transition-all" :class="!mode?'text-[#fffffe]':'text-green-950'">About Me</h1>
-					<div class="card bg-transparent filter bg-blur pt-1 px-4 sm:rounded-lg sm:mb-3  lg:p-3 lg:h-[15em] xl:h-[10em] rounded-xl  lg:mb-3 duration-500 transition-all" :class="!mode?'lg:bg-[#242629] blurWhite':'lg:bg-[#004643] blurImage'" data-aos="fade-right blurImage" data-aos-duration="1000">
-						<p class="mb-5 lg:text-[#abd1c6] sm:text-base md:text-lg  font-bold lg:font-thin leading-5 p-4 lg:p-0 duration-500 transition-all" :class="!mode?'text-[#94a1b2]':'text-[#004643]'">
+					<h1 class="hidden xl:block text-3xl mb-5  font-bold duration-500 transition-all" :class="!mode?'text-[#fffffe]':'text-[#2b2c34]'">About Me</h1>
+					<div class="card pt-1 px-4 sm:rounded-lg sm:mb-3  lg:p-3 lg:h-[15em] xl:h-[10em] rounded-xl  lg:mb-3 duration-500 transition-all" :class="!mode?'bg-[#242629] blurWhite':'bg-[#fffffe] blurImage'" data-aos="fade-right" data-aos-duration="1000">
+						<p class="mb-5 sm:text-base md:text-lg  font-bold lg:font-thin leading-5 p-4 lg:p-0 duration-500 transition-all" :class="!mode?'text-[#94a1b2]':'text-[#2b2c34]'">
 							My name is Fiernaz Ingga Pratama, born in 2005. From an early age, I developed a strong interest in technology. I graduated from primary school in 2018, middle school in 2021, and vocational high school (SMK) in 2024 as the top graduate. In 2024, I began my studies in Informatics at the National Development University "Veteran" Yogyakarta. Currently, I am in my second semester at the university.
 						</p>
 					</div>
-					<div class="card bg-transparent filter bg-blur px-4 sm:rounded-lg sm:mb-3 lg:font-thin font-bold lg:p-3 lg:h-[10em] xl:h-[6.5em] rounded-xl duration-500 transition-all" :class="!mode?'lg:bg-[#242629] blurWhite':'lg:bg-[#004643] blurImage'" data-aos="fade-left" data-aos-duration="1000">
-						<p class="sm:text-base md:text-lg mb-10 leading-5 lg:text-[#abd1c6] p-4 lg:p-0 duration-500 transition-all" :class="!mode?'text-[#94a1b2]':'text-[#004643]'">
+					<div class="card px-4 sm:rounded-lg sm:mb-3 lg:font-thin font-bold lg:p-3 lg:h-[10em] xl:h-[6.5em] rounded-xl duration-500 transition-all" :class="!mode?'bg-[#242629] blurWhite':'bg-[#fffffe] blurImage'" data-aos="fade-left" data-aos-duration="1000">
+						<p class="sm:text-base md:text-lg mb-10 leading-5 p-4 lg:p-0 duration-500 transition-all" :class="!mode?'text-[#94a1b2]':'text-[#2b2c34]'">
 							I aspire to become a programmer and network engineer. I am committed to improving my skills and knowledge to achieve my career goals. With a passion for technology and a dedication to learning, I am excited about the opportunities and challenges ahead.
 						</p>
 					</div>
@@ -173,29 +173,29 @@
 		</div>
 	</section>
 
-	<div id="skill" class="mb-28 -mt-10"></div>
+	<div id="skill"></div>
 
-	<section>
+	<section class="bg-[#fffffe] pb-[5em]">
 		<div>
-			<div class="w-full flex justify-center mb-10"  data-aos="fade-up"
+			<div class="w-full flex justify-center mb-10 pt-[5em]"  data-aos="fade-up"
 			data-aos-duration="1000">
 				<div class="flex justify-center items-center bg-transparent w-40 border-2  h-12 rounded-xl shadow-lg duration-500 transition-all" :class="!mode?'border-[#fffffe] blurWhite':'border-black blurImage'">
-					<h1 class="text-2xl  font-bold duration-500 transition-all" :class="!mode?'text-[#fffffe] blurImage':'text-green-950'">My Skills</h1>
+					<h1 class="text-2xl  font-bold duration-500 transition-all" :class="!mode?'text-[#fffffe] blurImage':'text-[#2b2c34]'">My Skills</h1>
 				</div>
 			</div>
 		
 			<div class="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
 				<div class="w-full flex justify-center mb-5" data-aos="fade-right" data-aos-duration="1000">
-					<div class="flex md:flex-col flex-row justify-start items-center bg-opacity-50 bg-transparent bg-blur w-[90px] md:h-[90px] md:w-[270px] border-2 rounded-md shadow-md p-2 filter lg:grayscale lg:hover:grayscale-0 transition duration-300 lg:hover:scale-110 blurImage" :class="{
-						'border-[#fffffe]' : !mode,
-						'border-black' : mode,
-						'lg:bg-white' : mode,
-						'lg:bg-[#242629]' : !mode
-					}">
-						<img src="/public/images/gambar_skills/html.png" alt="HTML" class="md:mb-0 -ml-[3px] md:-ml-0  md:mr-0 xl:mr-2 md:w-[60px] md:h-[55px] duration-500 transition-all" :class="!mode?'dropWhite':'dropImage'">
+					<div class="flex md:flex-col flex-row justify-start items-center bg-opacity-50 bg-transparent bg-blur w-[90px] md:h-[90px] md:w-[270px] border-2 rounded-md shadow-md p-2 filter lg:grayscale lg:hover:grayscale-0 transition duration-300 lg:hover:scale-110 blurImage" 
+						:class="{
+							'border-[#fffffe]' : !mode,
+							'border-black' : mode 
+						}">
+						<img src="/public/images/gambar_skills/html.png" alt="HTML" class="md:mb-0 -ml-[3px] md:-ml-0  md:mr-0 xl:mr-2 md:w-[60px] md:h-[55px] duration-500 transition-all" :class="!mode ? 'dropWhite' : 'dropImage'">
 						<p class="text-center hidden md:block mr-2 font-bold text-orange-500">HyperText Markup Language</p>
 					</div>
 				</div>
+				
 		
 				<div class="md:hidden flex items-center justify-center h-[90px]">
 					<div class=" w-2 h-[80px] rounded-xl duration-500 transition-all" :class="!mode?'bg-[#fffffe]':'bg-black'"></div>
@@ -204,9 +204,7 @@
 				<div class="w-full flex justify-center mb-5" data-aos="fade-left" data-aos-duration="1000">
 					<div class="flex flex-row md:flex-col justify-center items-center bg-opacity-50 bg-transparent bg-blur w-[90px] md:h-[90px] md:w-[270px] border-2 rounded-md shadow-md p-2 filter lg:grayscale lg:hover:grayscale-0 transition duration-300 lg:hover:scale-110" :class="{
 						'border-[#fffffe]' : !mode,
-						'border-black' : mode,
-						'lg:bg-white' : mode,
-						'lg:bg-[#242629]' : !mode
+						'border-black' : mode
 					}">
 						<img src="/public/images/gambar_skills/css.png" alt="CSS" class="md:w-[60px] md:h-[55px] duration-500 transition-all" :class="!mode?'dropWhite':'dropImage'">
 						<p class="text-center hidden md:block mr-2 font-bold text-blue-400">Cascading Style Sheets</p>
@@ -217,9 +215,7 @@
 				<div class="w-full flex justify-center mb-5" data-aos="fade-right" data-aos-duration="1000">
 					<div class="flex md:flex-col flex-row justify-center xl:justify-start items-center bg-opacity-50 bg-transparent bg-blur w-[90px] md:h-[90px] md:w-[270px] border-2 rounded-md shadow-md p-2 filter lg:grayscale lg:hover:grayscale-0 transition duration-300 lg:hover:scale-110" :class="{
 						'border-[#fffffe]' : !mode,
-						'border-black' : mode,
-						'lg:bg-white' : mode,
-						'lg:bg-[#242629]' : !mode
+						'border-black' : mode
 					}">
 						<img src="/public/images/gambar_skills/php2.png" alt="PHP" class="md:w-[60px] md:h-[55px] mb-2 md:mb-0 md:mr-4 duration-500 transition-all" :class="!mode?'dropWhite':'dropImage'">
 						<p class="text-center hidden md:block mr-2 font-bold text-purple-700">Hypertext Preprocessor</p>
@@ -235,9 +231,7 @@
 				<div class="w-full flex justify-center mb-5" data-aos="fade-left" data-aos-duration="1000">
 					<div class="flex flex-row md:flex-col justify-center items-center bg-opacity-50 bg-transparent bg-blur w-[90px] md:h-[90px] md:w-[270px] border-2 rounded-md shadow-md p-2 filter lg:grayscale lg:hover:grayscale-0 transition duration-300 lg:hover:scale-110" :class="{
 						'border-[#fffffe]' : !mode,
-						'border-black' : mode,
-						'lg:bg-white' : mode,
-						'lg:bg-[#242629]' : !mode
+						'border-black' : mode
 					}">
 						<img src="/public/images/gambar_skills/laravel2.png" alt="CSS" class="md:w-[60px] md:h-[55px] duration-500 transition-all" :class="!mode?'dropWhite':'dropImage'">
 						<p class="text-center hidden md:block mr-2 font-extrabold text-red-600">Laravel</p>
@@ -247,9 +241,7 @@
 				<div class="w-full flex justify-center mb-5" data-aos="fade-right" data-aos-duration="1000">
 					<div class="flex md:flex-col flex-row justify-center xl:justify-start items-center bg-opacity-50 bg-transparent bg-blur w-[90px] h-[90px] md:w-[270px] border-2 border-black rounded-md shadow-md p-2 filter lg:grayscale lg:hover:grayscale-0 transition duration-300 lg:hover:scale-110" :class="{
 						'border-[#fffffe]' : !mode,
-						'border-black' : mode,
-						'lg:bg-white' : mode,
-						'lg:bg-[#242629]' : !mode
+						'border-black' : mode
 					}">
 						<img src="/public/images/gambar_skills/tailwind2.png" alt="PHP" class="md:w-[60px] md:h-[40px] mb-2 xl:mb-0 md:mr-1 duration-500 transition-all" :class="!mode?'dropWhite':'dropImage'">
 						<p class="text-center hidden md:block font-extrabold text-teal-300 borderText">Tailwind</p>
@@ -264,9 +256,7 @@
 				<div class="w-full flex justify-center mb-5" data-aos="fade-left" data-aos-duration="1000">
 					<div class="flex flex-row md:flex-col justify-center items-center bg-opacity-50 bg-transparent bg-blur w-[90px] md:h-[90px] md:w-[270px] border-2 rounded-md shadow-md p-2 filter lg:grayscale lg:hover:grayscale-0 transition duration-300 lg:hover:scale-110" :class="{
 						'border-[#fffffe]' : !mode,
-						'border-black' : mode,
-						'lg:bg-white' : mode,
-						'lg:bg-[#242629]' : !mode
+						'border-black' : mode
 					}">
 						<img src="/public/images/gambar_skills/alpine.png" alt="CSS" class="md:w-[60px] md:h-[55px] duration-500 transition-all" :class="!mode?'dropWhite':'dropImage'">
 						<p class="text-center hidden md:block mr-2 font-extrabold borderText text-teal-200">Alpine JS</p>
@@ -276,9 +266,7 @@
 				<div class="w-full flex justify-center mb-5" data-aos="fade-right" data-aos-duration="1000">
 					<div class="flex flex-row md:flex-col justify-center items-center bg-opacity-50 bg-transparent bg-blur w-[90px] md:h-[90px] md:w-[270px] border-2 rounded-md shadow-md p-2 filter lg:grayscale lg:hover:grayscale-0 transition duration-300 lg:hover:scale-110" :class="{
 						'border-[#fffffe]' : !mode,
-						'border-black' : mode,
-						'lg:bg-white' : mode,
-						'lg:bg-[#242629]' : !mode
+						'border-black' : mode
 					}">
 						<img src="/public/images/gambar_skills/c++.png" alt="CSS" class="md:w-[60px] md:h-[55px] duration-500 transition-all" :class="!mode?'dropWhite':'dropImage'">
 						<p class="text-center hidden md:block mr-2 font-extrabold text-blue-800">Cplusplus</p>
@@ -293,9 +281,7 @@
 				<div class="w-full flex justify-center mb-5" data-aos="fade-left" data-aos-duration="1000">
 					<div class="flex flex-row md:flex-col justify-center items-center bg-opacity-50 bg-transparent bg-blur w-[90px] md:h-[90px] md:w-[270px] border-2 rounded-md shadow-md p-2 filter lg:grayscale lg:hover:grayscale-0 transition duration-300 lg:hover:scale-110" :class="{
 						'border-[#fffffe]' : !mode,
-						'border-black' : mode,
-						'lg:bg-white' : mode,
-						'lg:bg-[#242629]' : !mode
+						'border-black' : mode
 					}">
 						<img src="/public/images/gambar_skills/mysql2.png" alt="CSS" class="md:w-[60px] md:h-[55px] duration-500 transition-all" :class="!mode?'dropWhite':'dropImage'">
 						<p class="text-center hidden md:block mr-2 font-bold text-gray-600">My Structured Query Language</p>
@@ -307,732 +293,385 @@
 		</div>
 	</section>
 
-	<div id="certificate"  class="flex lg:hidden justify-center items-center mt-[5em] w-full h-3">
-		<div class="w-0 h-0 border-t-4 border-b-4 border-l-8 border-transparent border-l-black rotate-180 scale-[3]"></div>
-		<div class="h-2 w-3/4 bg-black"></div>
-		<div class="w-0 h-0 border-t-4 border-b-4 border-l-8 border-transparent border-l-black scale-[3]"></div>
+	<div id="certificate"  class="flex lg:hidden justify-center items-center w-full bg-black">
 	</div>
 	
 
-	<section class="mt-28 p-3 h-[33em] lg:h-[45em] xl:h-[50em] 2xl:h-[55em] ofer" >
+	<section class="mt-15 p-3 h-[90em] md:h-[60em] lg:h-[45em] xl:h-[50em] 2xl:h-[55em] ofer bg-[#d1d1e9] pt-[5em]" 
+	x-data="{mtcna: false, mtcre: false, ojm: false, pkl: false, lks: false}"
+	>
 		<div class="h-[25em] flex justify-center">
-			<div class="hidden lg:block">
-				<div class="w-full flex justify-center mb-10" data-aos="fade-down" data-aos-duration="1000">
-					<div class="flex justify-center items-center bg-transparent border-2 border-black w-40 h-12 rounded-xl shadow-lg">
-						<h1 class="text-2xl text-green-950 font-bold">Certificate</h1>
+			<div class="w-full h-full">
+				<!-- Judul -->
+				<div class="w-full flex justify-center mb-10">
+					<div data-aos="fade-up" data-aos-duration="1000" class="flex justify-center items-center bg-transparent border-2 duration-500 mb-[3em] transition-all w-40 h-12 rounded-xl shadow-lg" :class="!mode?'border-white':'border-black'">
+						<h1 class="text-2xl font-bold duration-500 transition-all" :class="!mode?'text-[#fffffe]':' text-green-950'">Certificate</h1>
 					</div>
 				</div>
-				<div class="grid grid-cols-3" x-data="{mtcre: false, ojm: false, lks: false, pkl: false, mtcna: false, kliki: Array(5).fill(false)}">
-
-					<!-- MTCNA -->
-					<div class="h-auto p-10 w-auto"  data-aos="fade-right" data-aos-duration="1000">
-						<div
-						@mouseenter="kliki[0] = true" @mouseleave="kliki[0] = false"
-						class="h-[11em] xl:h-[14em] 2xl:h-[16em] w-[15em] xl:w-[18em] 2xl:w-[20em] bg-[#094067] p-1 rounded-lg">
-							<div class="w-full h-full relative overflow-hidden">
-								<button @click="mtcna = !mtcna"
-									x-show="kliki[0]"
-									x-transition:enter="transition ease-out duration-300"
-									x-transition:enter-start=" translate-y-full"
-									x-transition:enter-end="translate-y-0"
-									x-transition:leave="transition ease-in duration-300"
-									x-transition:leave-start="translate-y-0"
-									x-transition:leave-end="translate-y-full"
-									class="bg-black backdrop-blur-md opacity-80 w-full h-full flex justify-center items-center absolute z-20 rounded-lg p-2">
-									<p class="mt-2 text-white text-center">
-										Klik
-									</p>
-									<div class="block">
-								</button>
-								<img class="w-full rounded-lg h-full absolute z-10 bg-black" :class="!mouse?'opacity-100':'opacity-50 transition duration-500'"  src="/public/images/serti_gambar/mtcna.png" alt="">
+				<!-- Certificate -->
+				<div class="w-full h-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center">
+					<!-- Mtcna -->
+					<div class="h-[12.5em] w-3/5 bg-white relative p-1 rounded-xl mx-auto mb-8 blurImage" data-aos="fade-up" data-aos-duration="1000">
+						<div class="flex h-[2em]">
+							<div class="flex flex-row p-1.5">
+								<div class="w-4 h-4 bg-green-600 rounded-full mr-2"></div>
+								<div class="w-4 h-4 bg-yellow-400 rounded-full mr-2"></div>
+								<div class="w-4 h-4 bg-red-600 rounded-full mr-2"></div>
+							</div>
+							<div class="w-full p-1.3 pr-1">
+								<h1 class="text-right font-bold text-base">MTCNA</h1>
 							</div>
 						</div>
-					</div>
-					<!-- mtcna -->
-					<div x-show="mtcna" 
-					x-transition:enter="transition ease-out duration-150"
-					x-transition:enter-start="opacity-0"
-					x-transition:enter-end="opacity-100"
-					x-transition:leave="transition ease-in duration-300"
-					x-transition:leave-start="opacity-100"
-					x-transition:leave-end="opacity-0"
-					class="p-10 fixed z-50 inset-0 bg-black bg-opacity-70 backdrop-blur-md flex justify-center items-center">
-						<div @click.outside="mtcna = false" class="mx-auto rounded-md p-2" x-data="{ tamMtcna: false }">
-							<div class="max-w-sm mx-auto bg-white shadow-lg rounded-lg">
-								<div class="bg-cover bg-center p-4 h-3/4">
-									<button class="w-full" @click="mtcna = !mtcna; ">
-										<h1 class="w-full text-right text-blue-600 font-bold">Kembali</h1>
-									</button>
-									<img src="/public/images/serti_gambar/mtcna.png" alt="">
-									<h1 class="text-base font-bold w-full flex justify-center md:hidden">MikroTik Certified</h1>
-									<h1 class="text-base font-bold w-full flex justify-center md:hidden">Network Associate</h1>
-									<div class="hidden md:block">
-										<h1 class="text-base font-bold w-full flex justify-center">MikroTik Certified Network Associate</h1>
-									</div>
-									<button @click="tamMtcna = !tamMtcna" class="text-right right-0 w-full">
-										<p x-show="!tamMtcna" class="text-blue-500 font-bold">Show More</p>
-										<p x-show="tamMtcna" class="text-blue-500 font-bold">Show Less</p>
-									</button>
+						<div class="h-[10em] w-full relative">
+							<div class="h-full w-full bg-[url('/bgcard/mtcna.jpg')] bg-cover bg-center filter blur-[2px] rounded-xl absolute inset-0"></div>
+							<button @click="mtcna=!mtcna" class="absolute flex items-center justify-center w-full text-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+								<div class="w-1/2 h-10 justify-center items-center shadow-inner-multiple bg-transparent flex rounded-full">
+									<h1 class="text-[#0e172c] font-bold text-base">Klik</h1>
 								</div>
-							</div>
-							<div x-show="tamMtcna"
-								x-transition:enter="transition ease-out duration-300" 
-								x-transition:enter-start="opacity-0 -translate-y-4" 
-								x-transition:enter-end="opacity-100 translate-y-0" 
-								x-transition:leave="transition ease-in duration-300" 
-								x-transition:leave-start="opacity-100 translate-y-0" 
-								x-transition:leave-end="opacity-0 -translate-y-4"
-								class="p-4 max-w-[50em] bg-white rounded-lg dropImages border border-black" @click="mtcna = true">
-									<p class="mt-2 text-center text-gray-600">
-										Sertifikasi yang diberikan oleh MikroTik, perusahaan yang dikenal dengan perangkat jaringan mereka, bertujuan untuk memastikan bahwa seseorang memiliki pemahaman dasar dan keterampilan dalam mengelola dan mengkonfigurasi jaringan menggunakan perangkat MikroTik.
-									</p>
-							</div>
+							</button>
 						</div>
 					</div>
-
+					<!-- Mtcre -->
+					<div class="h-[12.5em] w-3/5 bg-white relative p-1 rounded-xl mx-auto mb-8 blurImage" data-aos="fade-up" data-aos-duration="1000">
+						<div class="flex h-[2em]">
+							<div class="flex flex-row p-1.5">
+								<div class="w-4 h-4 bg-green-600 rounded-full mr-2"></div>
+								<div class="w-4 h-4 bg-yellow-400 rounded-full mr-2"></div>
+								<div class="w-4 h-4 bg-red-600 rounded-full mr-2"></div>
+							</div>
+							<div class="w-full p-1.3 pr-1">
+								<h1 class="text-right font-bold text-base">MTCRE</h1>
+							</div>
+						</div>
+						<div class="h-[10em] w-full relative">
+							<div class="h-full w-full bg-[url('/bgcard/mtcre.jpg')] bg-cover bg-center filter blur-[2px] rounded-xl absolute inset-0"></div>
+							<button @click="mtcre=!mtcre" class="absolute flex items-center justify-center w-full text-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+								<div class="w-1/2 h-10 justify-center items-center shadow-inner-multiple bg-transparent flex rounded-full">
+									<h1 class="text-[#0e172c] font-bold text-base">Klik</h1>
+								</div>
+							</button>
+						</div>
+					</div>
 					<!-- OJM -->
-					<div class="h-auto p-10 w-auto" data-aos="fade-up" data-aos-duration="1000">
-						<div
-						@mouseenter="kliki[1] = true" @mouseleave="kliki[1] = false"
-						class="h-[11em] xl:h-[14em] 2xl:h-[16em] w-[15em] xl:w-[18em] 2xl:w-[20em] bg-[#094067] p-1 rounded-lg">
-							<div class="w-full h-full relative overflow-hidden">
-								<button @click="ojm = !ojm"
-									x-show="kliki[1]"
-									x-transition:enter="transition ease-out duration-300"
-									x-transition:enter-start=" translate-y-full"
-									x-transition:enter-end=" translate-y-0"
-									x-transition:leave="transition ease-in duration-300"
-									x-transition:leave-start=" translate-y-0"
-									x-transition:leave-end=" translate-y-full"
-									class="bg-black backdrop-blur-md opacity-80 w-full h-full flex justify-center items-center absolute z-20 rounded-lg p-2">
-									<p class="mt-2 text-white text-center">
-										Klik
-									</p>
-									<div class="block">
-								</button>
-								<img class="w-full rounded-lg h-full absolute z-10 bg-black" :class="!mouse?'opacity-100':'opacity-50 transition duration-500'"  src="/public/images/serti_gambar/ojm.jpg" alt="">
+					<div class="h-[12.5em] w-3/5 bg-white relative p-1 rounded-xl mx-auto mb-8 blurImage" data-aos="fade-up" data-aos-duration="1000">
+						<div class="flex h-[2em]">
+							<div class="flex flex-row p-1.5">
+								<div class="w-4 h-4 bg-green-600 rounded-full mr-2"></div>
+								<div class="w-4 h-4 bg-yellow-400 rounded-full mr-2"></div>
+								<div class="w-4 h-4 bg-red-600 rounded-full mr-2"></div>
+							</div>
+							<div class="w-full p-1.3 pr-1">
+								<h1 class="text-right font-bold text-base">OJM</h1>
 							</div>
 						</div>
-					</div>
-					<div x-show="ojm" 
-					x-transition:enter="transition ease-out duration-150"
-					x-transition:enter-start="opacity-0"
-					x-transition:enter-end="opacity-100"
-					x-transition:leave="transition ease-in duration-300"
-					x-transition:leave-start="opacity-100"
-					x-transition:leave-end="opacity-0"
-					class="p-10 fixed z-50 inset-0 bg-black bg-opacity-70 backdrop-blur-md flex justify-center items-center">
-						<div @click.outside="ojm = false" class="mx-auto rounded-md p-2" x-data="{ tamojm: false }">
-							<div class="max-w-sm mx-auto bg-white shadow-lg rounded-lg">
-								<div class="bg-cover bg-center p-4 h-3/4">
-									<button class="w-full" @click="ojm = !ojm; ">
-										<h1 class="w-full text-right text-blue-600 font-bold">Kembali</h1>
-									</button>
-									<img src="/public/images/serti_gambar/ojm.jpg" alt="">
-									<div>
-										<h1 class="text-base font-bold w-full flex justify-center">Lomba Kompetensi Siswa</h1>
-									</div>
-									<button @click="tamojm = !tamojm" class="text-right right-0 w-full">
-										<p x-show="!tamojm" class="text-blue-500 font-bold">Show More</p>
-										<p x-show="tamojm" class="text-blue-500 font-bold">Show Less</p>
-									</button>
+						<div class="h-[10em] w-full relative">
+							<div class="h-full w-full bg-[url('/bgcard/ojm.jpg')] bg-cover bg-center filter blur-[2px] rounded-xl absolute inset-0"></div>
+							<button @click="ojm=!ojm" class="absolute flex items-center justify-center w-full text-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+								<div class="w-1/2 h-10 justify-center items-center shadow-inner-multiple bg-transparent flex rounded-full">
+									<h1 class="text-[#0e172c] font-bold text-base">Klik</h1>
 								</div>
+							</button>
+						</div>
+					</div>
+					<!-- Pkl -->
+					<div class="h-[12.5em] w-3/5 bg-white relative p-1 rounded-xl mx-auto mb-8 blurImage" data-aos="fade-up" data-aos-duration="1000">
+						<div class="flex h-[2em]">
+							<div class="flex flex-row p-1.5">
+								<div class="w-4 h-4 bg-green-600 rounded-full mr-2"></div>
+								<div class="w-4 h-4 bg-yellow-400 rounded-full mr-2"></div>
+								<div class="w-4 h-4 bg-red-600 rounded-full mr-2"></div>
 							</div>
-							<div x-show="tamojm"
-								x-transition:enter="transition ease-out duration-300" 
-								x-transition:enter-start="opacity-0 -translate-y-4" 
-								x-transition:enter-end="opacity-100 translate-y-0" 
-								x-transition:leave="transition ease-in duration-300" 
-								x-transition:leave-start="opacity-100 translate-y-0" 
-								x-transition:leave-end="opacity-0 -translate-y-4"
-								class="p-4 bg-white max-w-[50em] rounded-lg dropImages" @click="ojm = true">
-									<p class="mt-2 text-gray-600 text-center">
-										Olimpiade Jaringan Mikrotik adalah lomba tingkat nasional yang diselenggarakan oleh PT Citraweb Solusi Teknologi. Lomba ini mengundang siswa SMK dari jurusan Teknik Komputer dan Jaringan (TKJ) serta Sistem Informatika Jaringan dan Aplikasi (SIJA) untuk mengikuti berbagai tahap seleksi yang menguji pengetahuan dan keterampilan mereka di dunia jaringan.
-									</p>
+							<div class="w-full p-1.3 pr-1">
+								<h1 class="text-right font-bold text-base uppercase">Pkl</h1>
 							</div>
+						</div>
+						<div class="h-[10em] w-full relative">
+							<div class="h-full w-full bg-[url('/bgcard/pkl.jpg')] bg-cover bg-center filter blur-[2px] rounded-xl absolute inset-0"></div>
+							<button @click="pkl=!pkl" class="absolute flex items-center justify-center w-full text-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+								<div class="w-1/2 h-10 justify-center items-center shadow-inner-white bg-transparent flex rounded-full">
+									<h1 class="text-[#fffffe] font-bold text-base">Klik</h1>
+								</div>
+							</button>
 						</div>
 					</div>
 
-					<!-- MTCRE -->
-					<div class="h-auto p-10 w-auto" data-aos="fade-left" data-aos-duration="1000">
-						<div
-						@mouseenter="kliki[2] = true" @mouseleave="kliki[2] = false"
-						class="h-[11em] xl:h-[14em] 2xl:h-[16em] w-[15em] xl:w-[18em] 2xl:w-[20em] bg-[#094067] p-1 rounded-lg">
-							<div class="w-full h-full relative overflow-hidden">
-								<button @click="mtcre = !mtcre"
-									x-show="kliki[2]"
-									x-transition:enter="transition ease-out duration-300"
-									x-transition:enter-start="translate-y-full"
-									x-transition:enter-end="translate-y-0"
-									x-transition:leave="transition ease-in duration-300"
-									x-transition:leave-start="translate-y-0"
-									x-transition:leave-end="translate-y-full"
-									class="bg-black backdrop-blur-md opacity-80 w-full h-full flex justify-center items-center absolute z-20 rounded-lg p-2">
-									<p class="mt-2 text-white text-center">
-										Klik
-									</p>
-									<div class="block">
-								</button>
-								<img class="w-full rounded-lg h-full absolute z-10 bg-black" :class="!mouse?'opacity-100':'opacity-50 transition duration-500'"  src="/public/images/serti_gambar/mtcre.png" alt="">
-							</div>
-						</div>
-					</div>
-					<!-- mtcre -->
-					<div x-show="mtcre" 
-					x-transition:enter="transition ease-out duration-150"
-					x-transition:enter-start="opacity-0"
-					x-transition:enter-end="opacity-100"
-					x-transition:leave="transition ease-in duration-300"
-					x-transition:leave-start="opacity-100"
-					x-transition:leave-end="opacity-0"
-					class="p-10 fixed z-50 inset-0 bg-black bg-opacity-70 backdrop-blur-md flex justify-center items-center">
-						<div @click.outside="mtcre = false" class="mx-auto rounded-md p-2" x-data="{ tamMtcre: false }">
-							<div class="max-w-sm mx-auto bg-white shadow-lg rounded-lg">
-								<div class="bg-cover bg-center p-4 h-3/4">
-									<button class="w-full" @click="mtcre = !mtcre; ">
-										<h1 class="w-full text-right text-blue-600 font-bold">Kembali</h1>
-									</button>
-									<img src="/public/images/serti_gambar/mtcre.png" alt="">
-									<h1 class="text-base font-bold w-full flex justify-center md:hidden">MikroTik Certified</h1>
-									<h1 class="text-base font-bold w-full flex justify-center md:hidden">Routing Engineer</h1>
-									<div class="hidden md:block">
-										<h1 class="text-base font-bold w-full flex justify-center">MikroTik Certified Routing Engineer</h1>
-									</div>
-									<button @click="tamMtcre = !tamMtcre" class="text-right right-0 w-full">
-										<p x-show="!tamMtcre" class="text-blue-500 font-bold">Show More</p>
-										<p x-show="tamMtcre" class="text-blue-500 font-bold">Show Less</p>
-									</button>
-								</div>
-							</div>
-							<div x-show="tamMtcre"
-								x-transition:enter="transition ease-out duration-300" 
-								x-transition:enter-start="opacity-0 -translate-y-4" 
-								x-transition:enter-end="opacity-100 translate-y-0" 
-								x-transition:leave="transition ease-in duration-300" 
-								x-transition:leave-start="opacity-100 translate-y-0" 
-								x-transition:leave-end="opacity-0 -translate-y-4"
-								class="p-4 bg-white max-w-[50em] rounded-lg dropImages" @click="mtcre = true">
-									<p class="mt-2 text-center text-gray-600">
-										Sertifikasi ini adalah salah satu sertifikasi lanjutan yang ditawarkan oleh MikroTik. Tujuannya adalah untuk mengakui dan memvalidasi kemampuan pengguna dalam mengelola dan mengkonfigurasi routing di jaringan yang menggunakan perangkat MikroTik.
-									</p>
-							</div>
-						</div>
-					</div>
-					<!-- LKS -->
-					<div class="h-auto p-10 w-auto" data-aos="fade-right" data-aos-duration="1000">
-						<div
-						@mouseenter="kliki[3] = true" @mouseleave="kliki[3] = false"
-						class="h-[11em] xl:h-[14em] 2xl:h-[16em] w-[15em] xl:w-[18em] 2xl:w-[20em] bg-[#094067] p-1 rounded-lg">
-							<div class="w-full h-full relative overflow-hidden">
-								<button @click="lks = !lks"
-									x-show="kliki[3]"
-									x-transition:enter="transition ease-out duration-300"
-									x-transition:enter-start="translate-y-full"
-									x-transition:enter-end=" translate-y-0"
-									x-transition:leave="transition ease-in duration-300"
-									x-transition:leave-start="translate-y-0"
-									x-transition:leave-end="translate-y-full"
-									class="bg-black backdrop-blur-md opacity-80 w-full h-full flex justify-center items-center absolute z-20 rounded-lg p-2">
-									<p class="mt-2 text-white text-center">
-										Klik
-									</p>
-									<div class="block">
-								</button>
-								<img class="w-full rounded-lg h-full absolute z-10 bg-black" :class="!mouse?'opacity-100':'opacity-50 transition duration-500'"  src="/public/images/serti_gambar/lks.png" alt="">
-							</div>
-						</div>
-					</div>
-					<!-- lks -->
-					<div x-show="lks" 
-					x-transition:enter="transition ease-out duration-150"
-					x-transition:enter-start="opacity-0"
-					x-transition:enter-end="opacity-100"
-					x-transition:leave="transition ease-in duration-300"
-					x-transition:leave-start="opacity-100"
-					x-transition:leave-end="opacity-0"
-					class="p-10 fixed z-50 inset-0 bg-black bg-opacity-70 backdrop-blur-md flex justify-center items-center">
-						<div @click.outside="lks = false" class="mx-auto rounded-md p-2" x-data="{ tamlks: false }">
-							<div class="max-w-sm mx-auto bg-white shadow-lg rounded-lg">
-								<div class="bg-cover bg-center p-4 h-3/4">
-									<button class="w-full" @click="lks = !lks; ">
-										<h1 class="w-full text-right text-blue-600 font-bold">Kembali</h1>
-									</button>
-									<img src="/public/images/serti_gambar/lks.png" alt="">
-									<div>
-										<h1 class="text-base font-bold w-full flex justify-center">Olimpiade Jaringan Mikrotik</h1>
-									</div>
-									<button @click="tamlks = !tamlks" class="text-right right-0 w-full">
-										<p x-show="!tamlks" class="text-blue-500 font-bold">Show More</p>
-										<p x-show="tamlks" class="text-blue-500 font-bold">Show Less</p>
-									</button>
-								</div>
-							</div>
-							<div x-show="tamlks"
-								x-transition:enter="transition ease-out duration-300" 
-								x-transition:enter-start="opacity-0 -translate-y-4" 
-								x-transition:enter-end="opacity-100 translate-y-0" 
-								x-transition:leave="transition ease-in duration-300" 
-								x-transition:leave-start="opacity-100 translate-y-0" 
-								x-transition:leave-end="opacity-0 -translate-y-4"
-								class="p-4 bg-white rounded-lg max-w-[50em] dropImages" @click="lks = true">
-									<p class="mt-2 text-center text-gray-600">
-										Lomba Kompetensi Siswa (LKS) Kelompok Teknologi Daerah Istimewa Yogyakarta (DIY) pada bidang IT Network Systems Administration tahun 2023 adalah sebuah kompetisi yang menguji keahlian siswa SMK dalam teknologi sistem administrasi server dan jaringan. Tujuan lomba ini adalah untuk mempromosikan potensi siswa SMK kepada dunia usaha/industri sebagai pengguna tamatan/lulusan.
-									</p>
-							</div>
-						</div>
-					</div>
+					<!-- pengosong -->
+					<div class="lg:block hidden"></div>
 
-					<div class="h-auto p-10">
-						<div class="opacity-0 h-[11em] xl:h-[14em] 2xl:h-[16em] w-[15em] xl:w-[18em] 2xl:w-[20em] bg-[#094067] p-1 rounded-lg">
-							<img class="w-full rounded-lg h-full" src="images/serti_gambar/lks.png" alt="">
-						</div>
-					</div>
-
-					<!-- PKL -->
-					<div class="h-auto p-10 w-auto" data-aos="fade-left" data-aos-duration="1000">
-						<div
-						@mouseenter="kliki[4] = true" @mouseleave="kliki[4] = false"
-						class="h-[11em] xl:h-[14em] 2xl:h-[16em] w-[15em] xl:w-[18em] 2xl:w-[20em] bg-[#094067] p-1 rounded-lg">
-							<div class="w-full h-full relative overflow-hidden">
-								<button @click="pkl = !pkl"
-									x-show="kliki[4]"
-									x-transition:enter="transition ease-out duration-300"
-									x-transition:enter-start="translate-y-full"
-									x-transition:enter-end="translate-y-0"
-									x-transition:leave="transition ease-in duration-300"
-									x-transition:leave-start="translate-y-0"
-									x-transition:leave-end="translate-y-full"
-									class="bg-black backdrop-blur-md opacity-80 w-full h-full flex justify-center items-center absolute z-20 rounded-lg p-2">
-									<p class="mt-2 text-white text-center">
-										Klik
-									</p>
-									<div class="block">
-								</button>
-								<img class="w-full rounded-lg h-full absolute z-10 bg-black" :class="!mouse?'opacity-100':'opacity-50 transition duration-500'"  src="/public/images/serti_gambar/pkl.png" alt="">
+					<!-- Lks -->
+					<div class="h-[12.5em] w-3/5 bg-white relative p-1 rounded-xl mx-auto mb-8 blurImage" data-aos="fade-up" data-aos-duration="1000">
+						<div class="flex h-[2em]">
+							<div class="flex flex-row p-1.5">
+								<div class="w-4 h-4 bg-green-600 rounded-full mr-2"></div>
+								<div class="w-4 h-4 bg-yellow-400 rounded-full mr-2"></div>
+								<div class="w-4 h-4 bg-red-600 rounded-full mr-2"></div>
+							</div>
+							<div class="w-full p-1.3 pr-1">
+								<h1 class="text-right font-bold text-base uppercase">Lks</h1>
 							</div>
 						</div>
-					</div>
-					<!-- PKL -->
-					<div x-show="pkl" 
-					x-transition:enter="transition ease-out duration-150"
-					x-transition:enter-start="opacity-0"
-					x-transition:enter-end="opacity-100"
-					x-transition:leave="transition ease-in duration-300"
-					x-transition:leave-start="opacity-100"
-					x-transition:leave-end="opacity-0"
-					class="p-10 fixed z-50 inset-0 bg-black bg-opacity-70 backdrop-blur-md flex justify-center items-center">
-						<div @click.outside="pkl = false" class="mx-auto rounded-md p-2" x-data="{ tampkl: false }">
-							<div class="max-w-sm mx-auto bg-white shadow-lg rounded-lg">
-								<div class="bg-cover bg-center p-4 h-3/4">
-									<button class="w-full" @click="pkl = !pkl; ">
-										<h1 class="w-full text-right text-blue-600 font-bold">Kembali</h1>
-									</button>
-									<img src="/public/images/serti_gambar/pkl.png" alt="">
-									<div>
-										<h1 class="text-base font-bold w-full flex justify-center">Praktik Kerja Lapangan</h1>
-									</div>
-									<button @click="tampkl = !tampkl" class="text-right right-0 w-full">
-										<p x-show="!tampkl" class="text-blue-500 font-bold">Show More</p>
-										<p x-show="tampkl" class="text-blue-500 font-bold">Show Less</p>
-									</button>
+						<div class="h-[10em] w-full relative">
+							<div class="h-full w-full bg-[url('/bgcard/lks.jpg')] bg-cover bg-center filter blur-[2px] rounded-xl absolute inset-0"></div>
+							<button @click="lks=!lks" class="absolute flex items-center justify-center w-full text-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+								<div class="w-1/2 h-10 justify-center items-center shadow-inner-multiple bg-transparent flex rounded-full">
+									<h1 class="text-[#0e172c] font-bold text-base">Klik</h1>
 								</div>
-							</div>
-							<div x-show="tampkl"
-								x-transition:enter="transition ease-out duration-300" 
-								x-transition:enter-start="opacity-0 -translate-y-4" 
-								x-transition:enter-end="opacity-100 translate-y-0" 
-								x-transition:leave="transition ease-in duration-300" 
-								x-transition:leave-start="opacity-100 translate-y-0" 
-								x-transition:leave-end="opacity-0 -translate-y-4"
-								class="p-4 bg-white max-w-[50em] rounded-lg dropImages" @click="pkl = true">
-									<p class="mt-2 text-center text-gray-600">
-										PT Gmedia adalah perusahaan penyedia layanan internet di Yogyakarta. Mereka menawarkan berbagai layanan teknologi informasi seperti akses internet, cloud computing, artificial intelligence, internet of things (IoT), software, dan aplikasi. Gmedia juga menyediakan layanan konsultasi IT dan solusi untuk kebutuhan bisnis.
-									</p>
-									<p class="mt-2 text-center text-gray-600">
-										Gmedia menerima siswa Sekolah Menengah Kejuruan (SMK) untuk Praktik Kerja Lapangan (PKL). Program PKL ini berlangsung selama tiga bulan dan mencakup workshop, pembelajaran berbasis proyek, dan pengalaman lapangan, dengan tujuan memperdalam pengetahuan dan memberikan pengalaman praktis di dunia jaringan dan teknologi informasi.
-									</p>
-							</div>
+							</button>
 						</div>
 					</div>
 				</div>
 			</div>
-			
+		</div>
 
-			<!-- UNTUK HP -->
-			<div x-data="{ klik: Array(5).fill(false), mtcre: false, ojm: false, lks: false, pkl: false, mtcna: false, tamMtcna: false }">
-				<!-- Grid layout for Certificate buttons -->
-				<div class="grid grid-cols-[auto_auto_1fr] h-[25em] lg:hidden">
-					<div class="h-[25em] w-28 flex items-center justify-center" data-aos="fade-right" data-aos-duration="1000">
-						<h1 class="uppercase rotate-[270deg] font-bold text-5xl">Certificate</h1>
+		<!-- Pop Up -->
+		<!-- Mtcna -->
+		<div x-show="mtcna" 
+		x-transition:enter="transition ease-out duration-150"
+		x-transition:enter-start="opacity-0"
+		x-transition:enter-end="opacity-100"
+		x-transition:leave="transition ease-in duration-300"
+		x-transition:leave-start="opacity-100"
+		x-transition:leave-end="opacity-0"
+		class="p-10 fixed z-50 inset-0 bg-black bg-opacity-70 backdrop-blur-md flex justify-center items-center">
+			<div @click.outside="mtcna = false" class="mx-auto rounded-md p-2" x-data="{ tamMtcna: true }">
+				<div class="max-w-sm mx-auto bg-white shadow-lg rounded-lg transition-all duration-500 overflow-hidden" :class="tamMtcna?'h-[23em] md:h-[22em]':'h-[37em]'">
+					<div class="bg-cover bg-center p-4">
+						<div class="w-full h-6 grid grid-cols-2">
+							<div class="flex flex-row">
+								<div class="w-4 h-4 bg-green-600 rounded-full mr-2"></div>
+								<div class="w-4 h-4 bg-yellow-400 rounded-full mr-2"></div>
+								<div class="w-4 h-4 bg-red-600 rounded-full mr-2"></div>
+							</div>
+							<div class="w-full pr-1">
+								<h1 class="text-right font-bold text-base">
+									<button @click="mtcna=!mtcna">Kembali</button>
+								</h1>
+							</div>
+						</div>
+						<img src="/public/images/serti_gambar/mtcna.png" alt="">
+						<h1 class="text-base font-bold w-full flex justify-center md:hidden">MikroTik Certified</h1>
+						<h1 class="text-base font-bold w-full flex justify-center md:hidden">Network Associate</h1>
+						<div class="hidden md:block">
+							<h1 class="text-base font-bold w-full flex justify-center">MikroTik Certified Network Associate</h1>
+						</div>
+						<button @click="tamMtcna = !tamMtcna" class="text-right right-0 w-full">
+							<p x-show="!tamMtcna" class="text-blue-500 font-bold">Show Less</p>
+							<p x-show="tamMtcna" class="text-blue-500 font-bold">Show More</p>
+						</button>
 					</div>
-					<div class="grid grid-rows-7 w-16">
-						<div class="h-[5em] flex items-center w-9">
-							<div class="w-2 bg-black h-[5em] translate-x-[14px]"></div>
-							<div class="w-5 bg-black h-5 rounded-full"></div>
-						</div>
-						<div class="h-[5em] flex items-center w-9">
-							<div class="w-2 bg-black h-[5em] translate-x-[14px]"></div>
-							<div class="w-5 bg-black h-5 rounded-full"></div>
-						</div>
-						<div class="h-[5em] flex items-center w-9">
-							<div class="w-2 bg-black h-[5em] translate-x-[14px]"></div>
-							<div class="w-5 bg-black h-5 rounded-full"></div>
-						</div>
-						<div class="h-[5em] flex items-center w-9">
-							<div class="w-2 bg-black h-[5em] translate-x-[14px]"></div>
-							<div class="w-5 bg-black h-5 rounded-full"></div>
-						</div>
-						<div class="h-[5em] flex items-center w-9">
-							<div class="w-2 bg-black h-[5em] translate-x-[14px]"></div>
-							<div class="w-5 bg-black h-5 rounded-full"></div>
-						</div>
-					</div>
-					
-					<!-- Button Grid with Certificate Options -->
-					<div class="grid grid-rows-5 h-[25em] w-52 sm:w-72 md:w-96">
-						<div class="flex items-center h-[5em] p-2" data-aos="fade-left" data-aos-duration="1000">
-							<button class="w-full h-full" @click="klik[0] = !klik[0]; mtcna = !mtcna">
-								<div @click.outside="klik[0] = false" class="border-[4px] transition duration-200 rounded-lg border-black w-full h-full bg-[#004643]" :class="klik[0]?'scale-105':'scale-100'">
-									<h1 class="flex justify-center items-center text-[#e8e4e6] font-extrabold fontSize h-full">MTCNA</h1>
-								</div>
-							</button>
-						</div>
-						<div class="flex items-center h-[5em] p-2" data-aos="fade-left" data-aos-duration="1000">
-							<button class="w-full h-full" @click="klik[1] = !klik[1]; mtcre = !mtcre">
-								<div @click.outside="klik[1] = false" class="border-[4px] transition duration-200 rounded-lg border-black w-full h-full bg-[#004643]" :class="klik[1]?'scale-110':'scale-100'">
-									<h1 class="flex justify-center items-center text-[#e8e4e6] font-extrabold fontSize h-full">MTCRE</h1>
-								</div>
-							</button>
-						</div>
-						<div class="flex items-center h-[5em] p-2" data-aos="fade-left" data-aos-duration="1000">
-							<button class="w-full h-full" @click="klik[2] = !klik[2]; ojm = !ojm">
-								<div @click.outside="klik[2] = false" class="border-[4px] transition duration-200 rounded-lg border-black w-full h-full bg-[#004643]" :class="klik[2]?'scale-110':'scale-100'">
-									<h1 class="flex justify-center items-center text-[#e8e4e6] font-extrabold fontSize h-full">OJM</h1>
-								</div>
-							</button>
-						</div>
-						<div class="flex items-center h-[5em] p-2" data-aos="fade-left" data-aos-duration="1000">
-							<button class="w-full h-full" @click="klik[3] = !klik[3]; lks = !lks">
-								<div @click.outside="klik[3] = false" class="border-[4px] transition duration-200 rounded-lg border-black w-full h-full bg-[#004643]" :class="klik[3]?'scale-110':'scale-100'">
-									<h1 class="flex justify-center items-center text-[#e8e4e6] font-extrabold fontSize h-full">LKS</h1>
-								</div>
-							</button>
-						</div>
-						<div class="flex items-center h-[5em] p-2" data-aos="fade-left" data-aos-duration="1000">
-							<button class="w-full h-full" @click="klik[4] = !klik[4]; pkl = !pkl">
-								<div @click.outside="klik[4] = false" class="border-[4px] transition duration-200 rounded-lg border-black w-full h-full bg-[#004643]" :class="klik[4]?'scale-110':'scale-100'">
-									<h1 class="flex justify-center items-center text-[#e8e4e6] font-extrabold fontSize h-full">PKL</h1>
-								</div>
-							</button>
-						</div>
+					<div class="p-3 max-w-[50em] items-center flex justify-center -mt-2">
+						<p class="mt-2 text-center text-gray-600">
+							Sertifikasi yang diberikan oleh MikroTik, perusahaan yang dikenal dengan perangkat jaringan mereka, bertujuan untuk memastikan bahwa seseorang memiliki pemahaman dasar dan keterampilan dalam mengelola dan mengkonfigurasi jaringan menggunakan perangkat MikroTik.
+						</p>
 					</div>
 				</div>
-			
-				<!-- Modal for MTCNA -->
-				<div x-show="mtcna" 
-					 x-transition:enter="transition ease-out duration-150"
-					 x-transition:enter-start="opacity-0"
-					 x-transition:enter-end="opacity-100"
-					 x-transition:leave="transition ease-in duration-300"
-					 x-transition:leave-start="opacity-100"
-					 x-transition:leave-end="opacity-0"
-					 class="p-10 fixed z-50 inset-0 bg-black bg-opacity-70 backdrop-blur-md flex justify-center items-center">
-					
-					<div @click.outside="mtcna = false" class="mx-auto rounded-md p-2">
-						<!-- Modal Content -->
-						<div class="max-w-sm mx-auto bg-white shadow-lg rounded-lg">
-							<div class="bg-cover bg-center p-4 h-3/4">
-								<!-- Close Button -->
-								<button class="w-full" @click="mtcna = !mtcna">
-									<h1 class="w-full text-right text-blue-600 font-bold">Kembali</h1>
-								</button>
-								<!-- Certificate Image -->
-								<img src="/public/images/serti_gambar/mtcna.png" alt="">
-								<!-- Show More Button -->
-								<h1 class="text-base font-bold w-full flex justify-center md:hidden">MikroTik Certified</h1>
-								<h1 class="text-base font-bold w-full flex justify-center md:hidden">Network Associate</h1>
-								<div class="hidden md:block">
-									<h1 class="text-base font-bold w-full flex justify-center">MikroTik Certified Network Associate</h1>
-								</div>
-								<button @click="tamMtcna = !tamMtcna" class="text-right right-0 w-full">
-									<p x-show="!tamMtcna" class="text-blue-500 font-bold">Show More</p>
-									<p x-show="tamMtcna" class="text-blue-500 font-bold">Show Less</p>
-								</button>
+			</div>
+		</div>	
+
+		<!-- Mtcre -->
+		<div x-show="mtcre" 
+		x-transition:enter="transition ease-out duration-150"
+		x-transition:enter-start="opacity-0"
+		x-transition:enter-end="opacity-100"
+		x-transition:leave="transition ease-in duration-300"
+		x-transition:leave-start="opacity-100"
+		x-transition:leave-end="opacity-0"
+		class="p-10 fixed z-50 inset-0 bg-black bg-opacity-70 backdrop-blur-md flex justify-center items-center">
+			<div @click.outside="mtcre = false" class="mx-auto rounded-md p-2" x-data="{ tamMtcna: true }">
+				<div class="max-w-sm mx-auto bg-white shadow-lg rounded-lg transition-all duration-500 overflow-hidden" :class="tamMtcna?'h-[23em] md:h-[22em]':'h-[37em]'">
+					<div class="bg-cover bg-center p-4">
+						<div class="w-full h-6 grid grid-cols-2">
+							<div class="flex flex-row">
+								<div class="w-4 h-4 bg-green-600 rounded-full mr-2"></div>
+								<div class="w-4 h-4 bg-yellow-400 rounded-full mr-2"></div>
+								<div class="w-4 h-4 bg-red-600 rounded-full mr-2"></div>
+							</div>
+							<div class="w-full pr-1">
+								<h1 class="text-right font-bold text-base">
+									<button @click="mtcna=!mtcna">Kembali</button>
+								</h1>
 							</div>
 						</div>
-			
-						<!-- Description when Show More is clicked -->
-						<div x-show="tamMtcna"
-							 x-transition:enter="transition ease-out duration-300"
-							 x-transition:enter-start="opacity-0 -translate-y-4"
-							 x-transition:enter-end="opacity-100 translate-y-0"
-							 x-transition:leave="transition ease-in duration-300"
-							 x-transition:leave-start="opacity-100 translate-y-0"
-							 x-transition:leave-end="opacity-0 -translate-y-4"
-							 class="p-4 bg-white rounded-lg dropImages">
-							<p class="mt-2 text-gray-600">
-								Sertifikasi yang diberikan oleh MikroTik, perusahaan yang dikenal dengan perangkat jaringan mereka, bertujuan untuk memastikan bahwa seseorang memiliki pemahaman dasar dan keterampilan dalam mengelola dan mengkonfigurasi jaringan menggunakan perangkat MikroTik.
-							</p>
+						<img src="/public/images/serti_gambar/mtcna.png" alt="">
+						<h1 class="text-base font-bold w-full flex justify-center md:hidden">MikroTik Certified</h1>
+						<h1 class="text-base font-bold w-full flex justify-center md:hidden">Network Associate</h1>
+						<div class="hidden md:block">
+							<h1 class="text-base font-bold w-full flex justify-center">MikroTik Certified Network Associate</h1>
 						</div>
+						<button @click="tamMtcna = !tamMtcna" class="text-right right-0 w-full">
+							<p x-show="!tamMtcna" class="text-blue-500 font-bold">Show Less</p>
+							<p x-show="tamMtcna" class="text-blue-500 font-bold">Show More</p>
+						</button>
+					</div>
+					<div class="p-3 max-w-[50em] items-center flex justify-center -mt-2">
+						<p class="mt-2 text-center text-gray-600">
+							Sertifikasi yang diberikan oleh MikroTik, perusahaan yang dikenal dengan perangkat jaringan mereka, bertujuan untuk memastikan bahwa seseorang memiliki pemahaman dasar dan keterampilan dalam mengelola dan mengkonfigurasi jaringan menggunakan perangkat MikroTik.
+						</p>
 					</div>
 				</div>
+			</div>
+		</div>	
 
-				<!-- Modal for MTCRE -->
-				<div x-show="mtcre" 
-					x-transition:enter="transition ease-out duration-150"
-					x-transition:enter-start="opacity-0"
-					x-transition:enter-end="opacity-100"
-					x-transition:leave="transition ease-in duration-300"
-					x-transition:leave-start="opacity-100"
-					x-transition:leave-end="opacity-0"
-					class="p-10 fixed z-50 inset-0 bg-black bg-opacity-70 backdrop-blur-md flex justify-center items-center">
-						<div @click.outside="mtcre = false" class="mx-auto rounded-md p-2" x-data="{ tamMtcre: false }">
-							<div class="max-w-sm mx-auto bg-white shadow-lg rounded-lg">
-								<div class="bg-cover bg-center p-4 h-3/4">
-									<button class="w-full" @click="mtcre = !mtcre; ">
-										<h1 class="w-full text-right text-blue-600 font-bold">Kembali</h1>
-									</button>
-									<img src="/public/images/serti_gambar/mtcre.png" alt="">
-									<h1 class="text-base font-bold w-full flex justify-center md:hidden">MikroTik Certified</h1>
-									<h1 class="text-base font-bold w-full flex justify-center md:hidden">Routing Engineer</h1>
-									<div class="hidden md:block">
-										<h1 class="text-base font-bold w-full flex justify-center">MikroTik Certified Routing Engineer</h1>
-									</div>
-									<button @click="tamMtcre = !tamMtcre" class="text-right right-0 w-full">
-										<p x-show="!tamMtcre" class="text-blue-500 font-bold">Show More</p>
-										<p x-show="tamMtcre" class="text-blue-500 font-bold">Show Less</p>
-									</button>
-								</div>
+		<!-- Ojm -->
+		<div x-show="ojm" 
+		x-transition:enter="transition ease-out duration-150"
+		x-transition:enter-start="opacity-0"
+		x-transition:enter-end="opacity-100"
+		x-transition:leave="transition ease-in duration-300"
+		x-transition:leave-start="opacity-100"
+		x-transition:leave-end="opacity-0"
+		class="p-10 fixed z-50 inset-0 bg-black bg-opacity-70 backdrop-blur-md flex justify-center items-center">
+			<div @click.outside="ojm = false" class="mx-auto rounded-md p-2" x-data="{ tamojm: true }">
+				<div class="max-w-sm mx-auto bg-white shadow-lg rounded-lg transition-all duration-500 overflow-hidden" :class="tamojm?'h-[21em] md:h-[22em]':'h-[37em]'">
+					<div class="bg-cover bg-center p-4">
+						<div class="w-full h-6 grid grid-cols-2">
+							<div class="flex flex-row">
+								<div class="w-4 h-4 bg-green-600 rounded-full mr-2"></div>
+								<div class="w-4 h-4 bg-yellow-400 rounded-full mr-2"></div>
+								<div class="w-4 h-4 bg-red-600 rounded-full mr-2"></div>
 							</div>
-							<div x-show="tamMtcre"
-								x-transition:enter="transition ease-out duration-300" 
-								x-transition:enter-start="opacity-0 -translate-y-4" 
-								x-transition:enter-end="opacity-100 translate-y-0" 
-								x-transition:leave="transition ease-in duration-300" 
-								x-transition:leave-start="opacity-100 translate-y-0" 
-								x-transition:leave-end="opacity-0 -translate-y-4"
-								class="p-4 bg-white rounded-lg dropImages" @click="mtcre = true">
-									<p class="mt-2 text-gray-600">
-										Sertifikasi ini adalah salah satu sertifikasi lanjutan yang ditawarkan oleh MikroTik. Tujuannya adalah untuk mengakui dan memvalidasi kemampuan pengguna dalam mengelola dan mengkonfigurasi routing di jaringan yang menggunakan perangkat MikroTik.
-									</p>
+							<div class="w-full pr-1">
+								<h1 class="text-right font-bold text-base">
+									<button @click="ojm=!ojm">Kembali</button>
+								</h1>
 							</div>
 						</div>
+						<img src="/public/images/serti_gambar/ojm.jpg" alt="">
+						<div>
+							<h1 class="text-base font-bold w-full flex justify-center">Olimpiade Jaringan MikroTik</h1>
+						</div>
+						<button @click="tamojm = !tamojm" class="text-right right-0 w-full">
+							<p x-show="!tamojm" class="text-blue-500 font-bold">Show Less</p>
+							<p x-show="tamojm" class="text-blue-500 font-bold">Show More</p>
+						</button>
 					</div>
-
-				<!-- Modal for OJM -->
-				<div x-show="ojm" 
-				x-transition:enter="transition ease-out duration-150"
-				x-transition:enter-start="opacity-0"
-				x-transition:enter-end="opacity-100"
-				x-transition:leave="transition ease-in duration-300"
-				x-transition:leave-start="opacity-100"
-				x-transition:leave-end="opacity-0"
-				class="p-10 fixed z-50 inset-0 bg-black bg-opacity-70 backdrop-blur-md flex justify-center items-center">
-					<div @click.outside="ojm = false" class="mx-auto rounded-md p-2" x-data="{ tamojm: false }">
-						<div class="max-w-sm mx-auto bg-white shadow-lg rounded-lg">
-							<div class="bg-cover bg-center p-4 h-3/4">
-								<button class="w-full" @click="ojm = !ojm; ">
-									<h1 class="w-full text-right text-blue-600 font-bold">Kembali</h1>
-								</button>
-								<img src="/public/images/serti_gambar/ojm.jpg" alt="">
-								<div>
-									<h1 class="text-base font-bold w-full flex justify-center">Lomba Kompetensi Siswa</h1>
-								</div>
-								<button @click="tamojm = !tamojm" class="text-right right-0 w-full">
-									<p x-show="!tamojm" class="text-blue-500 font-bold">Show More</p>
-									<p x-show="tamojm" class="text-blue-500 font-bold">Show Less</p>
-								</button>
+					<div class="p-3 max-w-[50em] items-center flex justify-center -mt-2">
+						<p class="mt-2 text-center text-gray-600">
+							Olimpiade Jaringan Mikrotik adalah lomba tingkat nasional yang diselenggarakan oleh PT Citraweb Solusi Teknologi. Lomba ini mengundang siswa SMK dari jurusan Teknik Komputer dan Jaringan (TKJ) serta Sistem Informatika Jaringan dan Aplikasi (SIJA) untuk mengikuti berbagai tahap seleksi yang menguji pengetahuan dan keterampilan mereka di dunia jaringan.					</div>
+				</div>
+			</div>
+		</div>	
+		<!-- PKL -->
+		<div x-show="pkl" 
+		x-transition:enter="transition ease-out duration-150"
+		x-transition:enter-start="opacity-0"
+		x-transition:enter-end="opacity-100"
+		x-transition:leave="transition ease-in duration-300"
+		x-transition:leave-start="opacity-100"
+		x-transition:leave-end="opacity-0"
+		class="p-10 fixed z-50 inset-0 bg-black bg-opacity-70 backdrop-blur-md flex justify-center items-center">
+			<div @click.outside="pkl = false" class="mx-auto rounded-md p-2" x-data="{ tampkl: true }">
+				<div class="max-w-sm mx-auto bg-white shadow-lg rounded-lg transition-all duration-500 overflow-hidden" :class="tampkl?'h-[23em] md:h-[22em]':'h-[50em]'">
+					<div class="bg-cover bg-center p-4">
+						<div class="w-full h-6 grid grid-cols-2">
+							<div class="flex flex-row">
+								<div class="w-4 h-4 bg-green-600 rounded-full mr-2"></div>
+								<div class="w-4 h-4 bg-yellow-400 rounded-full mr-2"></div>
+								<div class="w-4 h-4 bg-red-600 rounded-full mr-2"></div>
+							</div>
+							<div class="w-full pr-1">
+								<h1 class="text-right font-bold text-base">
+									<button @click="pkl=!pkl">Kembali</button>
+								</h1>
 							</div>
 						</div>
-						<div x-show="tamojm"
-							x-transition:enter="transition ease-out duration-300" 
-							x-transition:enter-start="opacity-0 -translate-y-4" 
-							x-transition:enter-end="opacity-100 translate-y-0" 
-							x-transition:leave="transition ease-in duration-300" 
-							x-transition:leave-start="opacity-100 translate-y-0" 
-							x-transition:leave-end="opacity-0 -translate-y-4"
-							class="p-4 bg-white rounded-lg dropImages" @click="ojm = true">
-								<p class="mt-2 text-gray-600">
-									Olimpiade Jaringan Mikrotik adalah lomba tingkat nasional yang diselenggarakan oleh PT Citraweb Solusi Teknologi. Lomba ini mengundang siswa SMK dari jurusan Teknik Komputer dan Jaringan (TKJ) serta Sistem Informatika Jaringan dan Aplikasi (SIJA) untuk mengikuti berbagai tahap seleksi yang menguji pengetahuan dan keterampilan mereka di dunia jaringan.
-								</p>
+						<img src="/public/images/serti_gambar/pkl.png" alt="">
+						<h1 class="text-base font-bold w-full flex justify-center md:hidden">Praktek</h1>
+						<h1 class="text-base font-bold w-full flex justify-center md:hidden">Kerja Lapangan</h1>
+						<div class="hidden md:block">
+							<h1 class="text-base font-bold w-full flex justify-center">Praktek Kerja Lapangan</h1>
 						</div>
+						<button @click="tampkl = !tampkl" class="text-right right-0 w-full">
+							<p x-show="!tampkl" class="text-blue-500 font-bold">Show Less</p>
+							<p x-show="tampkl" class="text-blue-500 font-bold">Show More</p>
+						</button>
+					</div>
+					<div class="p-3 max-w-[50em] items-center flex flex-wrap justify-center -mt-2">
+						<p class="mt-2 text-center text-gray-600">
+							PT Gmedia adalah perusahaan penyedia layanan internet di Yogyakarta. Mereka menawarkan berbagai layanan teknologi informasi seperti akses internet, cloud computing, artificial intelligence, internet of things (IoT), software, dan aplikasi. Gmedia juga menyediakan layanan konsultasi IT dan solusi untuk kebutuhan bisnis.
+						</p>
+						<p class="mt-2 text-center text-gray-600">
+							Gmedia menerima siswa Sekolah Menengah Kejuruan (SMK) untuk Praktik Kerja Lapangan (PKL). Program PKL ini berlangsung selama tiga bulan dan mencakup workshop, pembelajaran berbasis proyek, dan pengalaman lapangan, dengan tujuan memperdalam pengetahuan dan memberikan pengalaman praktis di dunia jaringan dan teknologi informasi.
+						</p>
 					</div>
 				</div>
-
-				<!-- Modal for PKL -->
-				<div x-show="pkl" 
-					x-transition:enter="transition ease-out duration-150"
-					x-transition:enter-start="opacity-0"
-					x-transition:enter-end="opacity-100"
-					x-transition:leave="transition ease-in duration-300"
-					x-transition:leave-start="opacity-100"
-					x-transition:leave-end="opacity-0"
-					class="p-10 fixed z-50 inset-0 bg-black bg-opacity-70 backdrop-blur-md flex justify-center items-center">
-						<div @click.outside="pkl = false" class="mx-auto rounded-md p-2" x-data="{ tampkl: false }">
-							<div class="max-w-sm mx-auto bg-white shadow-lg rounded-lg">
-								<div class="bg-cover bg-center p-4 h-3/4">
-									<button class="w-full" @click="pkl = !pkl; ">
-										<h1 class="w-full text-right text-blue-600 font-bold">Kembali</h1>
-									</button>
-									<img src="/public/images/serti_gambar/pkl.png" alt="">
-									<div>
-										<h1 class="text-base font-bold w-full flex justify-center">Praktik Kerja Lapangan</h1>
-									</div>
-									<button @click="tampkl = !tampkl" class="text-right right-0 w-full">
-										<p x-show="!tampkl" class="text-blue-500 font-bold">Show More</p>
-										<p x-show="tampkl" class="text-blue-500 font-bold">Show Less</p>
-									</button>
-								</div>
+			</div>
+		</div>	
+		<!-- Lks -->
+		<div x-show="lks" 
+		x-transition:enter="transition ease-out duration-150"
+		x-transition:enter-start="opacity-0"
+		x-transition:enter-end="opacity-100"
+		x-transition:leave="transition ease-in duration-300"
+		x-transition:leave-start="opacity-100"
+		x-transition:leave-end="opacity-0"
+		class="p-10 fixed z-50 inset-0 bg-black bg-opacity-70 backdrop-blur-md flex justify-center items-center">
+			<div @click.outside="lks = false" class="mx-auto rounded-md p-2" x-data="{ tamlks: true }">
+				<div class="max-w-sm mx-auto bg-white shadow-lg rounded-lg transition-all duration-500 overflow-hidden" :class="tamlks?'h-[23em] md:h-[22em]':'h-[38em]'">
+					<div class="bg-cover bg-center p-4">
+						<div class="w-full h-6 grid grid-cols-2">
+							<div class="flex flex-row">
+								<div class="w-4 h-4 bg-green-600 rounded-full mr-2"></div>
+								<div class="w-4 h-4 bg-yellow-400 rounded-full mr-2"></div>
+								<div class="w-4 h-4 bg-red-600 rounded-full mr-2"></div>
 							</div>
-							<div x-show="tampkl"
-								x-transition:enter="transition ease-out duration-300" 
-								x-transition:enter-start="opacity-0 -translate-y-4" 
-								x-transition:enter-end="opacity-100 translate-y-0" 
-								x-transition:leave="transition ease-in duration-300" 
-								x-transition:leave-start="opacity-100 translate-y-0" 
-								x-transition:leave-end="opacity-0 -translate-y-4"
-								class="p-4 bg-white rounded-lg dropImages" @click="pkl = true">
-									<p class="mt-2 text-gray-600">
-										PT Gmedia adalah perusahaan penyedia layanan internet di Yogyakarta. Mereka menawarkan berbagai layanan teknologi informasi seperti akses internet, cloud computing, artificial intelligence, internet of things (IoT), software, dan aplikasi. Gmedia juga menyediakan layanan konsultasi IT dan solusi untuk kebutuhan bisnis.
-									</p>
-									<p class="mt-2 text-gray-600">
-										Gmedia menerima siswa Sekolah Menengah Kejuruan (SMK) untuk Praktik Kerja Lapangan (PKL). Program PKL ini berlangsung selama tiga bulan dan mencakup workshop, pembelajaran berbasis proyek, dan pengalaman lapangan, dengan tujuan memperdalam pengetahuan dan memberikan pengalaman praktis di dunia jaringan dan teknologi informasi.
-									</p>
+							<div class="w-full pr-1">
+								<h1 class="text-right font-bold text-base">
+									<button @click="lks=!lks">Kembali</button>
+								</h1>
 							</div>
 						</div>
-					</div>
-
-				<!-- Modal for LKS -->
-				<div x-show="lks" 
-					x-transition:enter="transition ease-out duration-150"
-					x-transition:enter-start="opacity-0"
-					x-transition:enter-end="opacity-100"
-					x-transition:leave="transition ease-in duration-300"
-					x-transition:leave-start="opacity-100"
-					x-transition:leave-end="opacity-0"
-					class="p-10 fixed z-50 inset-0 bg-black bg-opacity-70 backdrop-blur-md flex justify-center items-center">
-						<div @click.outside="lks = false" class="mx-auto rounded-md p-2" x-data="{ tamlks: false }">
-							<div class="max-w-sm mx-auto bg-white shadow-lg rounded-lg">
-								<div class="bg-cover bg-center p-4 h-3/4">
-									<button class="w-full" @click="lks = !lks; ">
-										<h1 class="w-full text-right text-blue-600 font-bold">Kembali</h1>
-									</button>
-									<img src="/public/images/serti_gambar/lks.png" alt="">
-									<div>
-										<h1 class="text-base font-bold w-full flex justify-center">Olimpiade Jaringan Mikrotik</h1>
-									</div>
-									<button @click="tamlks = !tamlks" class="text-right right-0 w-full">
-										<p x-show="!tamlks" class="text-blue-500 font-bold">Show More</p>
-										<p x-show="tamlks" class="text-blue-500 font-bold">Show Less</p>
-									</button>
-								</div>
-							</div>
-							<div x-show="tamlks"
-								x-transition:enter="transition ease-out duration-300" 
-								x-transition:enter-start="opacity-0 -translate-y-4" 
-								x-transition:enter-end="opacity-100 translate-y-0" 
-								x-transition:leave="transition ease-in duration-300" 
-								x-transition:leave-start="opacity-100 translate-y-0" 
-								x-transition:leave-end="opacity-0 -translate-y-4"
-								class="p-4 bg-white rounded-lg dropImages" @click="lks = true">
-									<p class="mt-2 text-gray-600">
-										Lomba Kompetensi Siswa (LKS) Kelompok Teknologi Daerah Istimewa Yogyakarta (DIY) pada bidang IT Network Systems Administration tahun 2023 adalah sebuah kompetisi yang menguji keahlian siswa SMK dalam teknologi sistem administrasi server dan jaringan. Tujuan lomba ini adalah untuk mempromosikan potensi siswa SMK kepada dunia usaha/industri sebagai pengguna tamatan/lulusan.
-									</p>
-							</div>
+						<img src="/public/images/serti_gambar/lks.png" alt="">
+						<h1 class="text-base font-bold w-full flex justify-center md:hidden">Lomba</h1>
+						<h1 class="text-base font-bold w-full flex justify-center md:hidden">Kompetensi Siswa</h1>
+						<div class="hidden md:block">
+							<h1 class="text-base font-bold w-full flex justify-center">Lomba Kompetensi Siswa</h1>
 						</div>
+						<button @click="tamlks = !tamlks" class="text-right right-0 w-full">
+							<p x-show="!tamlks" class="text-blue-500 font-bold">Show Less</p>
+							<p x-show="tamlks" class="text-blue-500 font-bold">Show More</p>
+						</button>
 					</div>
+					<div class="p-3 max-w-[50em] items-center flex justify-center -mt-2">
+						<p class="mt-2 text-center text-gray-600">
+							Lomba Kompetensi Siswa (LKS) Kelompok Teknologi Daerah Istimewa Yogyakarta (DIY) pada bidang IT Network Systems Administration tahun 2023 adalah sebuah kompetisi yang menguji keahlian siswa SMK dalam teknologi sistem administrasi server dan jaringan. Tujuan lomba ini adalah untuk mempromosikan potensi siswa SMK kepada dunia usaha/industri sebagai pengguna tamatan/lulusan.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>	
+	</section>
+
+	<div id="contact" class="-mt-10 mb-[5em]"></div>
+
+	<section class="bg-[#fffffe] h-[50em] flex p-10 items-center justify-center">
+		<div class="flex flex-col justify-center bg-[#d1d1e9] blurImage h-[30em] lg:h-[15em] w-3/4 rounded-2xl" data-aos="fade-up" data-aos-duration="1000">
+            <h1 class="text-[#2b2c34] font-bold text-center text-2xl lg:block">Find Me On</h1>
+			<div class="p-3 flex flex-col lg:flex-row justify-center items-center">
+				<a href="#home" class="flex h-auto w-1/2 lg:mr-4 my-5 border-[2px] group bg-transparent lg:bg-green-500 lg:border-[1.5px] lg:border-black border-green-500 justify-center lg:-translate-y-[10px] items-center rounded-full lg:w-[2.5em] pl-[4.5px] lg:hover:w-[13em] transition-all duration-500">
+					<i class='bx bxl-whatsapp text-3xl mr-1 lg:group-hover:-translate-x-10 transition-all duration-500 lg:text-white text-green-500'></i>
+					<h1 class="lg:hidden text-green-500">WhatsApp</h1>
+                    <h1 class="opacity-0 absolute lg:group-hover:opacity-100 lg:group-hover:translate-x-4 transition-all duration-500 text-white">WhatsApp</h1>
+				</a>
+				<a href="https://www.instagram.com/finz_pratama/profilecard/?igsh=NmVwNDk2OG1zYXRs" class="flex h-auto w-1/2 group lg:mr-4 mb-5 justify-center items-center rounded-full lg:w-[2.5em] pl-[4.5px] lg:hover:w-[13em] transition-all duration-500 bg-transparent lg:bg-pink-500 lg:border-[1.5px] lg:border-black border-pink-500 border-[2px]">
+					<i class='bx bxl-instagram text-3xl mr-1 lg:group-hover:-translate-x-10 transition-all duration-500 text-pink-500 lg:text-white'></i>
+					<h1 class="lg:hidden text-pink-500">Instagram</h1>
+                    <h1 class="opacity-0 absolute text-white lg:group-hover:opacity-100 lg:group-hover:translate-x-4 transition-all duration-500">Instagram</h1>
+				</a>
+				<a href="https://www.tiktok.com/@finz_pratama?_t=ZS-8sjRKjEPRZg&_r=1" class="flex h-auto w-1/2 group lg:mr-4 mb-5 justify-center items-center rounded-full lg:w-[2.5em] pl-[4.5px] lg:hover:w-[13em] transition-all duration-500 bg-transparent lg:bg-black lg:border-[1.5px] border-black border-[2px]">
+					<i class='bx bxl-tiktok text-3xl mr-1 lg:group-hover:-translate-x-8 transition-all duration-500 lg:text-white'></i>
+					<h1 class="lg:hidden">TikTok</h1>
+                    <h1 class="opacity-0 absolute lg:group-hover:opacity-100 lg:group-hover:translate-x-4 transition-all duration-500 text-white">TikTok</h1>
+				</a>
+				<a href="#home" class="flex h-auto w-1/2 group lg:mr-4 mb-5 border justify-center items-center rounded-full lg:w-[2.5em] pl-[4.5px] lg:hover:w-[13em] transition-all duration-500 bg-transparent lg:bg-[#A52A2A] lg:border-[1.5px] lg:border-black border-[#A52A2A]">
+					<i class='bx bx-envelope text-3xl mr-1 lg:group-hover:-translate-x-8 transition-all duration-500 text-[#A52A2A] lg:text-white'></i>
+					<h1 class="lg:hidden">Email</h1>
+                    <h1 class="opacity-0 absolute lg:group-hover:opacity-100 lg:group-hover:translate-x-4 transition-all duration-500 text-white">Email</h1>
+				</a>
 			</div>
 		</div>
 	</section>
 
-	<div id="contact" class="flex lg:hidden justify-center items-center mt-[1em] mb-[7em] w-full h-3">
-		<div class="w-0 h-0 border-t-4 border-b-4 border-l-8 border-transparent border-l-black rotate-180 scale-[3]"></div>
-		<div id="certificate" class="h-2 w-3/4 bg-black"></div>
-		<div class="w-0 h-0 border-t-4 border-b-4 border-l-8 border-transparent border-l-black scale-[3]"></div>
-	</div>
-
-	<section>
-		<div class="lg:hidden w-full flex justify-center">
-			<div data-aos="fade-down" data-aos-duration="1000" class="flex justify-center items-center bg-transparent border-2 border-black w-40 h-12 rounded-xl shadow-lg">
-				<h1 class="text-2xl text-green-950 font-bold">Contact Me</h1>
-			</div>
-		</div>
-		<div class="h-[35em] flex justify-center w-full items-center relative">
-			<!-- Elemen dengan background -->
-			<div data-aos="fade-right" data-aos-duration="1000" class="lg:h-[10em] h-[20em] w-1/2 bg-slate-100 dropImages rounded-xl filter relative lg:w-[30em] z-10"></div>
-			
-			<!-- Konten di atas background blur -->
-			<div class="absolute z-20 flex flex-col space-y-4 w-1/2 items-center" data-aos="fade-left" data-aos-duration="1000">
-				<h1 class="text-slate-700 font-bold text-2xl lg:block">Find Me On</h1>
-
-				<!-- WhatsApp -->
-				<div class="hidden lg:block">
-					<div class="flex flex-row">
-						<div class="m-3 flex items-center space-x-2 justify-center w-[3em] hover:w-[10em] transition-all duration-300 ease-in-out relative">
-							<a href="" target="_blank" class="flex items-center justify-center text-white bg-green-500 hover:scale-105 transition-all border-[2px] border-green-500 duration-300 w-full group rounded-full relative">
-								<i class="bx bxl-whatsapp text-3xl transition-transform duration-300 group-hover:-translate-x-12"></i>
-								<p class="ml-2 text-lg right-5 absolute group-hover:opacity-100 opacity-0 transition-all duration-300">WhatsApp</p>
-							</a>
-						</div>
-						<div class="m-3 flex items-center space-x-2 justify-center w-[3em] hover:w-[10em] transition-all duration-300 ease-in-out relative">
-							<a href="https://www.instagram.com/finz_pratama/profilecard/?igsh=NmVwNDk2OG1zYXRs" target="_blank" class="flex items-center justify-center text-white bg-pink-500 hover:scale-105 transition-all border-[2px] border-pink-500 duration-300 w-full group rounded-full relative">
-								<i class="bx bxl-instagram text-3xl transition-transform duration-300 group-hover:-translate-x-12"></i>
-								<p class="ml-2 text-lg right-5 absolute group-hover:opacity-100 opacity-0 transition-all duration-300">Instagram</p>
-							</a>
-						</div>
-						<div class="m-3 flex items-center space-x-2 justify-center w-[3em] hover:w-[10em] transition-all duration-300 ease-in-out relative">
-							<a href="https://www.tiktok.com/@finz_pratama?_t=ZS-8sjRKjEPRZg&_r=1" target="_blank" class="flex items-center justify-center text-white bg-black hover:scale-105 transition-all border-[2px] border-black duration-300 w-full group rounded-full relative">
-								<i class="bx bxl-tiktok text-3xl transition-transform duration-300 group-hover:-translate-x-12"></i>
-								<p class="ml-2 text-lg right-8 absolute group-hover:opacity-100 opacity-0 transition-all duration-300">TikTiok</p>
-							</a>
-						</div>
-						<div class="m-3 flex items-center space-x-2 justify-center w-[3em] hover:w-[10em] transition-all duration-300 ease-in-out relative">
-							<a href="" target="_blank" class="flex items-center justify-center text-white bg-[#A52A2A] hover:scale-105 transition-all border-[2px] border-[#A52A2A] duration-300 w-full group rounded-full relative">
-								<i class="bx bx-envelope text-3xl transition-transform duration-300 group-hover:-translate-x-10"></i>
-								<p class="ml-2 text-lg right-10 absolute group-hover:opacity-100 opacity-0 transition-all duration-300">Email</p>
-							</a>
-						</div>
-					</div>
-				</div>
-				
-
-				<!-- UKURAN HP -->
-				<!-- WhatsApp -->
-				<div class="flex items-center space-x-2 w-3/4 justify-center lg:hidden">
-					<a href="" target="_blank" class="flex items-center justify-center text-white bg-green-500 hover:scale-105 transition green border-[2px] border-green-500 duration-300 w-full rounded-full">
-						<i class='bx bxl-whatsapp text-3xl'></i>
-						<p class="ml-0 sm:ml-2 text-base sm:text-lg">WhatsApp</p>
-					</a>
-				</div>
-
-				<!-- Instagram -->
-				<div class="flex items-center space-x-2 w-3/4 justify-center lg:hidden">
-					<a href="https://www.instagram.com/finz_pratama/profilecard/?igsh=NmVwNDk2OG1zYXRs" target="_blank" class="flex items-center justify-center text-white bg-pink-500 hover:scale-105 transition duration-300 border-[2px] pinke border-pink-500 w-full rounded-full">
-						<i class='bx bxl-instagram text-3xl'></i>
-						<p class="ml-0 sm:ml-2 text-base sm:text-lg">Instagram</p>
-					</a>
-				</div>
-
-				<!-- Tik Toks -->
-				<div class="flex items-center space-x-2 w-3/4 justify-center lg:hidden">
-					<a href="https://www.tiktok.com/@finz_pratama?_t=ZS-8sjRKjEPRZg&_r=1" target="_blank" class="flex items-center justify-center text-white bg-black hover:scale-105 transition duration-300 border-[2px] border-black w-full hovec rounded-full">
-						<i class='bx bxl-instagram text-3xl'></i>
-						<p class="ml-2 text-lg">TikTok</p>
-					</a>
-				</div>
-
-				<!-- Email -->
-				<div class="flex items-center space-x-2 w-3/4 justify-center lg:hidden">
-					<a href="" class="flex items-center justify-center text-white bg-[#A52A2A] hover:scale-105 transition duration-300 border-[2px] brown border-[#A52A2A] w-full hovec rounded-full">
-						<i class='bx bx-envelope text-3xl'></i>
-						<p class="ml-2 text-lg">Email</p>
-					</a>
-				</div>
-			</div>
-		</div>
-		
-		
-	</section>
 </div>
 
 	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
